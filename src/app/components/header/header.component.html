@@ -1,0 +1,66 @@
+<header class="header">
+  <div class="header__container" [ngClass]="{'scrolled': isScrolled}">
+    <!-- Logo -->
+    <img
+      class="header__logo"
+      src="../../../assets/images/imgLogo.png"
+      alt="Logo do site"
+    />
+  
+    <!-- Barra de navegação -->
+    <nav
+      class="navBar"
+      [ngClass]="{ open: isMenuOpen, close: !isMenuOpen }"
+      aria-label="Navegação principal"
+    >
+      <!-- Ícone de Fechar (X) -->
+      <svg
+        class="navBar__x"
+        (click)="closeTab()"
+        xmlns="http://www.w3.org/2000/svg"
+        width="32"
+        height="32"
+        viewBox="0 0 24 24"
+        role="button"
+        aria-label="Fechar menu"
+        tabindex="0"
+      >
+        <path
+          d="m16.192 6.344-4.243 4.242-4.242-4.242-1.414 1.414L10.535 12l-4.242 4.242 1.414 1.414 4.242-4.242 4.243 4.242 1.414-1.414L13.364 12l4.242-4.242z"
+        ></path>
+      </svg>
+  
+      <!-- Links de navegação -->
+      <ul class="navBar__links">
+        <li>
+          <a href="#home" aria-label="Ir para home">Home</a>
+        </li>
+        <li>
+          <a href="#about" aria-label="Ir para sobre">Sobre</a>
+        </li>
+        <li>
+          <a href="#projects" aria-label="Ir para Projetos">Projetos</a>
+        </li>
+        <li>
+          <a href="#contact" aria-label="Ir para Contato">Contato</a>
+        </li>
+      </ul>
+    </nav>
+  
+    <!-- Ícone de Menu (Hambúrguer) -->
+    <svg
+      (click)="openTab()"
+      xmlns="http://www.w3.org/2000/svg"
+      width="32"
+      height="32"
+      viewBox="0 0 24 24"
+      role="button"
+      aria-label="Abrir menu"
+      tabindex="1"
+    >
+      <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z"></path>
+    </svg>
+  </div>
+</header>
+<!-- <img src="../../../assets/images/imgLogo.png" width="200px" height="900px" alt=""> -->
+

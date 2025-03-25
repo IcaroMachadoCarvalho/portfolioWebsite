@@ -1,0 +1,86 @@
+:host{
+  position: relative;
+  top: 80px;
+  .intro {
+    position: relative;
+    height: auto;
+    max-height: 700px;
+    max-width: 500px;
+    z-index: 0;
+    overflow-x: hidden;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url("../../../assets/images/imagemFundoIntro.png");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      transform: rotateZ(225deg) translate(50px,80px);
+      // Imagem sem fundo filter, com backdrop
+      filter: blur(3px);
+      z-index: -1;
+    }
+    &__name {
+      font-size: 3rem;
+      font-weight: 400;
+      font-family: "Bebas Neue", sans-serif;
+    }
+    &__role {
+      font-family: "Bebas Neue", sans-serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+    }
+
+    &__icons{
+      margin-top: 1rem;
+      svg{
+        transition: transform 0.7s ease;
+      }
+      svg:hover, svg:focus{
+        transform: translateY(-5px);
+      }
+    }
+
+    &__skills{
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      flex-wrap: wrap;
+      margin-top: 1rem;
+      gap: 0.5rem;
+      .skill{
+        width: 70px;
+        height: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 1px solid black;
+        border-radius: 7px;
+        transition: 0.7s ease;
+
+        img{
+          height: 50%;
+          width: auto;
+          aspect-ratio: 1/1;
+        }
+
+        &:hover, &:focus{
+          transform: translateY(-5px);
+        }
+      }
+    }
+
+    &__chevron{
+      text-align: center;
+      margin-top: 1rem;
+    }
+  }
+}
