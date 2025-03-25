@@ -1,0 +1,26 @@
+.skill{
+  width: 70px;
+  height: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 7px;
+  transition: 0.7s ease;
+
+  img{
+    height: 50%;
+    width: auto;
+    aspect-ratio: 1/1;
+  }
+
+  p{
+    font-size: 14px;
+  }
+
+  &:hover, &:focus{
+    transform: translateY(-5px);
+  }
+}

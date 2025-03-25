@@ -1,0 +1,106 @@
+.header {
+  position: fixed;
+  top: 1rem;
+  left: 0;
+  padding: 0rem 0.5rem;
+  width: 100%;
+  height: auto;
+  background-color: transparent;
+  z-index: 20;
+
+  &__container {
+    background-color: transparent;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    transition: 0.5s linear;
+
+    &.scrolled {
+      padding: 0.5rem;
+      border: 1px solid black;
+      border-radius: 7px;
+      backdrop-filter: blur(2px);
+    }
+  }
+
+  img {
+    width: auto;
+    height: 42px;
+    border-radius: 5px;
+  }
+  .navBar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100dvh;
+    /* From https://css.glass */
+    background-color: rgb(19, 17, 17);
+    // background: rgba(26, 25, 25, 0.801);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.678);
+    backdrop-filter: blur(2.3px);
+    -webkit-backdrop-filter: blur(2.3px);
+    border-radius: 0;
+    opacity: 0;
+    z-index: 20;
+    transition: 0.7s ease-out;
+
+    &__x {
+      position: absolute;
+      top: 1.2rem;
+      right: 0.5rem;
+      fill: white;
+    }
+
+    &__links {
+      height: 100%;
+      width: 100%;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 1.125rem;
+
+      a {
+        position: relative;
+        color: white;
+        font-size: 1.5rem;
+        padding: 0.2rem;
+        width: auto;
+        &::after {
+          content: "";
+          background-color: white;
+          width: 0px;
+          height: 2px;
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          border-radius: 13px;
+          transition: width 0.5s ease-in-out;
+        }
+
+        &:hover::after,
+        &:focus::after {
+          width: 100%;
+        }
+      }
+    }
+
+    &.close {
+      visibility: hidden;
+      opacity: 0;
+      z-index: -1;
+    }
+    &.open {
+      visibility: visible;
+      opacity: 1;
+      z-index: 2;
+    }
+  }
+}
