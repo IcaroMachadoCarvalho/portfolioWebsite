@@ -1,13 +1,12 @@
-:host{
-  position: relative;
-  top: 80px;
+:host {
   .intro {
     position: relative;
-    height: auto;
-    max-height: 700px;
+    height: 100dvh;
+    overflow-x: hidden;
+    // max-height: 700px;
     max-width: 500px;
     z-index: 0;
-    overflow-x: hidden;
+    margin-top: 70px;
 
     &::before {
       content: "";
@@ -18,11 +17,11 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background: url("../../../assets/images/imagemFundoIntro.png");
+      background: url("../../../assets/images/imagemFundoIntro.webp");
       background-repeat: no-repeat;
       background-position: center;
       background-size: contain;
-      transform: rotateZ(225deg) translate(50px,80px);
+      transform: rotateZ(225deg) translate(50px, 80px);
       // Imagem sem fundo filter, com backdrop
       filter: blur(3px);
       z-index: -1;
@@ -38,24 +37,28 @@
       font-size: 1.5rem;
     }
 
-    &__icons{
+    &__icons {
       margin-top: 1rem;
-      svg{
+      a {
+        display: inline-block;
+        width: fit-content;
         transition: transform 0.7s ease;
-      }
-      svg:hover, svg:focus{
-        transform: translateY(-5px);
+
+        &:hover,
+        &:focus {
+          transform: translateY(-5px);
+        }
       }
     }
 
-    &__skills{
+    &__skills {
       display: flex;
-      justify-content: start;
+      justify-content: center;
       align-items: center;
       flex-wrap: wrap;
       margin-top: 1rem;
       gap: 0.5rem;
-      .skill{
+      .skill {
         width: 70px;
         height: 70px;
         display: flex;
@@ -66,21 +69,25 @@
         border-radius: 7px;
         transition: 0.7s ease;
 
-        img{
+        img {
           height: 50%;
           width: auto;
           aspect-ratio: 1/1;
         }
 
-        &:hover, &:focus{
+        &:hover,
+        &:focus {
           transform: translateY(-5px);
         }
       }
     }
 
-    &__chevron{
+    &__chevron {
+      width: fit-content;
       text-align: center;
-      margin-top: 1rem;
+      position: relative;
+      top: 40px;
+      margin: 0 auto;
     }
   }
 }

@@ -44,6 +44,12 @@ input {
 html,
 body {
   scroll-behavior: smooth;
+  scroll-padding: 2.5rem;
+}
+
+html, body{
+  height: 100dvh;
+  width: 100vw;
 }
 
 body{
@@ -57,5 +63,3 @@ body{
   margin-right: auto;
   margin-left: auto;
 }
-
-// $title: "Bebas Neue", sans-serif;

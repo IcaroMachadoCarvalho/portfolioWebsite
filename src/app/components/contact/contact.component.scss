@@ -1,0 +1,39 @@
+:host{
+  .contact{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+
+    h1{
+      font-size: 3rem;
+      font-weight: 400;
+      font-family: "Bebas Neue", sans-serif;
+    }
+    &__cto{
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      gap: 1rem;
+      button{
+        background-color: transparent;
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        border: 1px solid black;
+        transition: 0.5s ease-in-out;
+        &:hover, &:focus{
+          background-color: black;
+          color: white;
+        }
+      }
+      a{
+        color: black;
+      }
+    }
+  }
+}

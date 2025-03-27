@@ -10,16 +10,13 @@ import { NgClass } from '@angular/common';
 export class HeaderComponent {
   isMenuOpen: boolean = false;
   isScrolled:boolean = false;
-  openTab(){
-    this.isMenuOpen = true;
-  }
-  closeTab(){
-    this.isMenuOpen = false;
+  toggleTab(){
+    this.isMenuOpen = !this.isMenuOpen;
   }
 
   @HostListener('window:scroll', ['$event'])
   onWindowScroll() {
     // Adiciona a classe "scrolled" se a rolagem for maior que 50px
-    this.isScrolled = window.scrollY > 50;
+    this.isScrolled = window.scrollY > 15;
   }
 }
