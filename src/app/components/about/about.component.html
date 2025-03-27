@@ -1,0 +1,101 @@
+<section class="about container">
+  <div class="about__overlay" [ngClass]="{ open: isOpen }">
+    <svg
+      class="about__overlay--open"
+      (click)="openOverlay()"
+      [ngClass]="{ close: isOpen }"
+      tabindex="0"
+      aria-label="Abrir aba de sobre mim"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+      ></path>
+    </svg>
+
+    <div class="about__info" [ngClass]="{ open: isOpen }">
+      <svg
+        class="about__info--close"
+        (click)="closeOverlay()"
+        aria-label="Fechar aba de sobre mim"
+        xmlns="http://www.w3.org/2000/svg"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        tabindex="0"
+      >
+        <path
+          d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"
+        ></path>
+      </svg>
+
+      <h1 tabindex="0" aria-labelledby="sobre-titulo">Sobre</h1>
+
+      <div class="about__info--options" role="group" aria-labelledby="sobre-opcoes">
+        <label
+          for="mim"
+          [ngClass]="{'selected': optionChoosed === 'mim'}"
+          aria-label="Mostrar sobre mim"
+        >Mim</label>
+
+        <label
+          for="profissional"
+          [ngClass]="{'selected': optionChoosed === 'profissional'}"
+          aria-label="Mostrar sobre minha vida profissional"
+        >Profissional</label>
+
+        <label
+          for="formacao"
+          [ngClass]="{'selected': optionChoosed === 'formacao'}"
+          aria-label="Mostrar sobre minha formação"
+        >Formação</label>
+      </div>
+
+      <div class="about__info--input">
+        <input
+          type="radio"
+          name="option"
+          id="mim"
+          value="mim"
+          [(ngModel)]="optionChoosed"
+          tabindex="0"
+          aria-describedby="mim-opcao"
+        />
+        <input
+          type="radio"
+          name="option"
+          id="profissional"
+          value="profissional"
+          [(ngModel)]="optionChoosed"
+          tabindex="0"
+          aria-describedby="profissional-opcao"
+        />
+        <input
+          type="radio"
+          name="option"
+          id="formacao"
+          value="formacao"
+          [(ngModel)]="optionChoosed"
+          tabindex="0"
+          aria-describedby="formacao-opcao"
+        />
+      </div>
+
+      <div class="about__info--content" [ngSwitch]="optionChoosed">
+        <div class="content--mim" *ngSwitchCase="'mim'" [innerHTML]="getContentSection(0)?.content" id="mim-opcao"></div>
+        <div class="content--professional" *ngSwitchCase="'profissional'" [innerHTML]="getContentSection(1)?.content" id="profissional-opcao"></div>
+        <div class="content--formacao" *ngSwitchCase="'formacao'" [innerHTML]="getContentSection(2)?.content" id="formacao-opcao"></div>
+      </div>
+
+
+      <a class="about__cv"
+        aria-label="Baixar currículo"
+        tabindex="0"
+        (click)="downloadCV()"
+      >
+        CV
+      </a>
+    </div>
+  </div>
+</section>

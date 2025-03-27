@@ -1,0 +1,80 @@
+:host {
+  .footer {
+    background-color: black;
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+    &__info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, auto);
+      gap: 10px;
+
+      img {
+        width: 45px;
+        height: 45px;
+        border-radius: 7px;
+        margin-bottom: 1rem;
+        grid-column: 1/1;
+        grid-row: 1/1;
+      }
+
+      .footer__phrase {
+        grid-column: 1/3;
+        grid-row: 2/2;
+      }
+    }
+
+    .footer__nav {
+      grid-column: 1/2;
+      grid-row: 3/3;
+      h2 {
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      p {
+        font-size: 14px;
+      }
+      a {
+        color: white;
+        margin-bottom: 0.5rem;
+        width: fit-content;
+        &:last-child {
+          margin-bottom: 0px;
+        }
+      }
+    }
+
+    .footer__contact {
+      grid-column: 2/3;
+      grid-row: 3/3;
+      h2 {
+        font-size: 1.125rem;
+        font-weight: bold;
+        margin-bottom: 0.5rem;
+      }
+      a {
+        display: inline-block;
+        &:hover,
+        &:focus {
+          transform: scale(1.1);
+        }
+      }
+      svg {
+        fill: white;
+        transition: 0.7s ease;
+      }
+    }
+
+    &__copyright {
+      margin-top: 1rem;
+      padding: 1rem 0rem;
+      border-top: 1px solid white;
+      P {
+        text-align: center;
+      }
+    }
+  }
+}

@@ -18,7 +18,5 @@ export class IntroComponent implements OnInit{
 
   ngOnInit(): void {
     this.skillsArray = this.service.getSkills();
-    console.log(this.skillsArray);
-
   }
 }

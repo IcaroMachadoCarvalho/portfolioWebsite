@@ -9,35 +9,35 @@ export class SkillService {
 
   skills:skill[] = [
     {
-      imgLink: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/angular/angular-original.svg",
+      imgLink: "../../assets/images/angular-original.svg",
       techName: "Angular"
     },
     {
-      imgLink: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg",
+      imgLink: "../../assets/images/typescript-plain.svg",
       techName: "Typescript"
     },
     {
-      imgLink: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg",
+      imgLink: "../../assets/images/tailwindcss-original.svg",
       techName: "Tailwind"
     },
     {
-      imgLink: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sass/sass-original.svg",
+      imgLink: "../../assets/images/sass-original.svg",
       techName: "Sass"
     },
     {
-      imgLink: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg",
+      imgLink: "../../assets/images/javascript-original.svg",
       techName: "Javascript"
     },
     {
-      imgLink: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg",
+      imgLink: "../../assets/images/html5-original.svg",
       techName: "HTML"
     },
     {
-      imgLink: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg",
+      imgLink: "../../assets/images/css3-plain.svg",
       techName: "CSS"
     },
     {
-      imgLink: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg",
+      imgLink: "../../assets/images/react-original.svg",
       techName: "React"
     }
   ]

@@ -1,10 +1,9 @@
 .header {
   position: fixed;
-  top: 1rem;
+  top: 0.5rem;
   left: 0;
   padding: 0rem 0.5rem;
   width: 100%;
-  height: auto;
   background-color: transparent;
   z-index: 20;
 
@@ -12,9 +11,9 @@
     background-color: transparent;
     width: 100%;
     height: auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    // display: flex;
+    // justify-content: space-between;
+    // align-items: center;
     border: none;
     transition: 0.5s linear;
 
@@ -22,32 +21,46 @@
       padding: 0.5rem;
       border: 1px solid black;
       border-radius: 7px;
-      backdrop-filter: blur(2px);
+      backdrop-filter: blur(4px);
+    }
+
+    &.open{
+      border: 1px solid black;
+      border-radius: 7px;
+      backdrop-filter: blur(5px);
+      padding-bottom: 0.5rem;
     }
   }
 
-  img {
-    width: auto;
-    height: 42px;
-    border-radius: 5px;
+  &__tab{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: fit-content;
+
+    img {
+      width: auto;
+      height: 42px;
+      border-radius: 5px;
+    }
+    svg{
+      fill: black;
+    }
   }
+
   .navBar {
-    position: fixed;
+    display: block;
+    position: relative;
     top: 0;
     left: 0;
-    width: 100vw;
-    height: 100dvh;
-    /* From https://css.glass */
-    background-color: rgb(19, 17, 17);
-    // background: rgba(26, 25, 25, 0.801);
-    border-radius: 16px;
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.678);
-    backdrop-filter: blur(2.3px);
-    -webkit-backdrop-filter: blur(2.3px);
-    border-radius: 0;
-    opacity: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden; /* Impede que o conteúdo saia da área visível */
+    opacity: 0; /* Inicialmente invisível */
+    max-height: 0; /* Inicialmente com altura zero */
     z-index: 20;
-    transition: 0.7s ease-out;
+    transition: max-height 0.7s ease-out, opacity 0.7s ease-out;
 
     &__x {
       position: absolute;
@@ -57,8 +70,8 @@
     }
 
     &__links {
-      height: 100%;
-      width: 100%;
+      // height: 100%;
+      // width: 100%;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -69,13 +82,13 @@
 
       a {
         position: relative;
-        color: white;
+        color: black;
         font-size: 1.5rem;
         padding: 0.2rem;
         width: auto;
         &::after {
           content: "";
-          background-color: white;
+          background-color: black;
           width: 0px;
           height: 2px;
           position: absolute;
@@ -91,16 +104,20 @@
         }
       }
     }
+    // &.scrolled{
+    //   top: 0;
+    //   left: 0;
+    // }
 
     &.close {
-      visibility: hidden;
-      opacity: 0;
-      z-index: -1;
+      max-height: 0; /* Fecha a navbar */
+      opacity: 0; /* Torna a navbar invisível */
     }
+
     &.open {
-      visibility: visible;
-      opacity: 1;
-      z-index: 2;
+      max-height: 500px; /* Defina o valor adequado dependendo da altura do seu conteúdo */
+      opacity: 1; /* Torna a navbar visível */
     }
+
   }
 }

@@ -1,0 +1,155 @@
+:host{
+  .about {
+    position: relative;
+    height: 560px;
+    width: 100vw;
+    background: url(../../../assets/images/sobreImg.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    filter: grayscale(100%);
+    z-index: 0;
+
+    &__overlay {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 50%;
+      height: 100%;
+      background-color: rgb(51, 51, 51);
+      transition: 0.7s ease-in-out;
+
+      &--open {
+        fill: white;
+        height: 45px;
+        width: 45px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        stroke: transparent;
+        transition: 0.7s linear;
+
+        &:hover,
+        &:focus {
+          stroke: white;
+          fill: none;
+        }
+
+        &.close {
+          display: none;
+        }
+      }
+
+      &.open {
+        width: 100%;
+        left: 0;
+        @media(max-width: 303px){
+          height: auto;
+        }
+      }
+    }
+
+    &__info {
+      position: relative;
+      display: none;
+      height: fit-content;
+      width: 100%;
+      opacity: 0;
+
+      &.open {
+        display: block;
+        opacity: 1;
+        padding: 0 0.5rem;
+      }
+
+      &--close {
+        fill: white;
+        position: absolute;
+        left: 0.5rem;
+        height: 45px;
+        width: 45px;
+        stroke: transparent;
+        transition: 0.7s linear;
+        &:hover,
+        &:focus {
+          stroke: white;
+          fill: none;
+        }
+      }
+
+      h1 {
+        color: white;
+        font-size: 3rem;
+        text-align: center;
+        margin-top: 1.5rem;
+      }
+
+      &--options{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: fit-content;
+        color: white;
+        gap: 20px;
+        margin: 1.5rem auto;
+        border: 1px solid white;
+        border-radius: 13px;
+
+        @media(max-width:303px) {
+          flex-direction: column;
+        }
+
+        label{
+          padding: 12px;
+          border-radius: 13px;
+          transition: 0.7s ease-in-out;
+          font-weight: 400;
+          width: 100%;
+          text-align: center;
+
+          &.selected{
+            background-color: white;
+            color: black;
+          }
+        }
+      }
+
+      &--input{
+        display: none;
+      }
+
+      &--content{
+        margin: 1rem auto;
+        text-align: center;
+        color: white;
+        text-align: left;
+        div{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+          text-align: start;
+          gap: 1rem;
+        }
+      }
+
+      .about__cv {
+        width: fit-content;
+        background-color: transparent;
+        color: white;
+        border: 1px solid white;
+        border-radius: 13px;
+        padding: 0.5rem 1rem;
+        margin: 0 auto;
+        transition: 0.7s ease-in-out;
+
+        &:hover,
+        &:focus {
+          background-color: white;
+          color: black;
+        }
+      }
+    }
+  }
+}
