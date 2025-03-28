@@ -1,6 +1,6 @@
 import { NgClass, NgSwitch, NgSwitchCase } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { FormsModule, NgModel } from '@angular/forms';
+import { FormsModule } from '@angular/forms';
 import { AboutService } from '../../services/about.service';
 
 @Component({
@@ -31,6 +31,6 @@ export class AboutComponent implements OnInit{
   }
 
   downloadCV(){
-    
+
   }
 }

@@ -1,0 +1,29 @@
+<div class="projectDetail container">
+  <div class="projectDetail__tab">
+    <svg
+      class="about__overlay--open"
+      tabindex="0"
+      aria-label="Abrir aba de sobre mim"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+      ></path>
+    </svg>
+    <p>Voltar para home</p>
+  </div>
+  <div class="projectDetail__post">
+    <h3>{{project.name}}</h3>
+    <p></p>
+    <!-- <img [src]="project.imgProject" [alt]="'Imagem do projeto' + project.name"> -->
+    <h4>Sobre</h4>
+    <p>{{project.description}}</p>
+    <h4>Tecnologias</h4>
+    <p></p>
+    <h4>Site</h4>
+    <p></p>
+    <h4>Github</h4>
+    <p>{{project.urlGithub}}</p>
+  </div>
+</div>
