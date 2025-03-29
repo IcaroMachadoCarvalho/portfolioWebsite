@@ -1,3 +1,86 @@
 <section class="projects container">
   <h1>Projetos</h1>
+  <div class="projects__options" role="group" aria-labelledby="sobre-opcoes">
+    <label
+      for="all"
+      [ngClass]="{ selected: optionChoosed === 'all' }"
+      aria-label="Mostrar sobre mim"
+      >Todos</label
+    >
+
+    <label
+      for="vanilla"
+      [ngClass]="{ selected: optionChoosed === 'vanilla' }"
+
+      aria-label="Mostrar sobre mim"
+      >HTML/CSS/JS</label
+    >
+
+    <label
+      for="frameworks"
+      [ngClass]="{ selected: optionChoosed === 'frameworks' }"
+
+      aria-label="Mostrar sobre minha vida profissional"
+      >Frameworks</label
+    >
+
+    <label
+      for="others"
+      [ngClass]="{ selected: optionChoosed === 'others' }"
+
+      aria-label="Mostrar sobre minha formação"
+      >Outros</label
+    >
+  </div>
+
+  <div class="projects__input">
+    <input
+      type="radio"
+      name="option"
+      id="all"
+      value="all"
+      tabindex="0"
+      [(ngModel)]="optionChoosed"
+      (ngModelChange)="onOptionChange()"
+      aria-describedby="all-opcao"
+    />
+    <input
+      type="radio"
+      name="option"
+      id="vanilla"
+      value="vanilla"
+      tabindex="0"
+      [(ngModel)]="optionChoosed"
+      (ngModelChange)="onOptionChange()"
+      aria-describedby="vanilla-opcao"
+    />
+    <input
+      type="radio"
+      name="option"
+      id="frameworks"
+      value="frameworks"
+      tabindex="0"
+      [(ngModel)]="optionChoosed"
+      (ngModelChange)="onOptionChange()"
+      aria-describedby="frameworks-opcao"
+    />
+    <input
+      type="radio"
+      name="option"
+      id="others"
+      value="others"
+      tabindex="0"
+      [(ngModel)]="optionChoosed"
+      (ngModelChange)="onOptionChange()"
+      aria-describedby="others-opcao"
+    />
+  </div>
+  <div class="projects__section">
+    <div *ngFor="let project of resultQuery | slice:0:index">
+      <app-project [project]="project" [routerLink]="['/projects',project.id]"  ></app-project>
+    </div>
+  </div>
+  <button (click)="loadMore()" *ngIf="index < resultQuery.length" class="projects__more">
+    Ver mais
+  </button>
 </section>

@@ -1,0 +1,30 @@
+.projectDetail{
+  margin-top: 80px;
+  width: 100%;
+  height: 300px;
+
+
+  &__tab{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid black;
+
+    svg{
+      height: 2rem;
+      width: 2rem;
+    }
+  }
+
+  &__post{
+    overflow: hidden;
+    h3,h4{
+      width: 100%;
+    }
+    p{
+      width: 100%;
+    }
+  }
+}
