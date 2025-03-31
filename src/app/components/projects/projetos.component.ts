@@ -1,4 +1,4 @@
-import { ProjectsService } from './../../services/projects.service';
+import { ProjectsService } from '../../services/projects.service';
 import { NgClass, NgFor, NgIf, SlicePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
@@ -7,16 +7,24 @@ import { ProjectComponent } from './project/project.component';
 import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-projetos',
-  imports: [NgClass, FormsModule, NgFor, NgIf, ProjectComponent, SlicePipe, RouterLink],
+  selector: 'app-projects',
+  imports: [
+    NgClass,
+    FormsModule,
+    NgFor,
+    NgIf,
+    ProjectComponent,
+    SlicePipe,
+    RouterLink,
+  ],
   templateUrl: './projetos.component.html',
   styleUrls: ['./projetos.component.scss'],
 })
-export class ProjetosComponent implements OnInit {
+export class ProjectsComponent implements OnInit {
   optionChoosed: string = 'all';
   projects: project[] = [];
   resultQuery!: project[];
-  index:number = 3;
+  index: number = 3;
 
   constructor(private projectService: ProjectsService) {}
 
@@ -58,7 +66,7 @@ export class ProjetosComponent implements OnInit {
           return (
             !item.languages.includes('HTML') &&
             !item.languages.includes('CSS') &&
-            !item.languages.includes('Javascript')&&
+            !item.languages.includes('Javascript') &&
             !item.languages.includes('Angular') &&
             !item.languages.includes('React') &&
             !item.languages.includes('Tailwind Css')
@@ -78,7 +86,7 @@ export class ProjetosComponent implements OnInit {
     this.filterProjects();
   }
 
-  loadMore(){
+  loadMore() {
     this.index += 3;
   }
 }

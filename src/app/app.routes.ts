@@ -13,16 +13,23 @@ export const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path:"projects/:id",
+    path: 'projects/:id',
     // Lazy loading componente standalone
-    loadComponent:() => import("./views/project-detail/project-detail.component").then(v => v.ProjectDetailComponent)
+    loadComponent: () =>
+      import('./views/project-detail/project-detail.component').then(
+        (v) => v.ProjectDetailComponent
+      ),
   },
-  // {
-  //   path: "contato",
-  //   component:
-  // },
-  // {
-  //     path: "**",
-  //     component: ""
-  // }
+  {
+    path: 'contact',
+    loadComponent: () =>
+      import('./views/forms/forms.component').then((v) => v.FormsComponent),
+  },
+  {
+    path: '**',
+    loadComponent: () =>
+      import('./views/not-found/not-found.component').then(
+        (v) => v.NotFoundComponent
+      ),
+  },
 ];
