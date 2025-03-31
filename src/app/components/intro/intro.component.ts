@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, AfterViewInit} from '@angular/core';
 import { SkillService } from './../../services/skill.service';
 import { skill } from '../../models/skill';
 import { SkillComponent } from './skill/skill.component';

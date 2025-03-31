@@ -1,11 +1,12 @@
 import { project } from './../../models/project';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ProjectsService } from '../../services/projects.service';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 
 @Component({
   selector: 'app-project-detail',
-  imports: [],
+  imports: [RouterLink, NgIf, NgFor, NgClass],
   templateUrl: './project-detail.component.html',
   styleUrl: './project-detail.component.scss',
 })
@@ -20,6 +21,6 @@ export class ProjectDetailComponent implements OnInit {
     if (idProject) {
       this.project = this.projectService.getProjectById(idProject)!;
     }
-    console.log(this.project);
+    window.scrollTo(0,0);
   }
 }

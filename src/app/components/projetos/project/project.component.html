@@ -1,8 +1,8 @@
-<div class="project">
+<div class="project revealUp">
   <img [src]="project.imgProject" [alt]="'Imagem do ' +  project.name">
   <div class="project__info">
     <h2>{{project.name}}</h2>
-    <p>{{project.description | slice:0:120}} </p>
+    <p>{{project.shortDescription}} </p>
     <div class="project__skills">
         <span *ngFor="let item of project.languages | slice:0:3">{{item}}</span>
     </div>

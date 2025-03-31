@@ -21,6 +21,12 @@
     transition: transform 0.7s ease-in;
   }
 
+  @media(max-width: 195px){
+    p{
+     display: none;
+    } 
+   }
+
   &::before {
     content: "";
     position: absolute;
@@ -43,30 +49,23 @@
     color: white;
     padding: 1rem 1rem;
     z-index: 3;
-
-    // h1 {
-    //   // color: white;
-    // }
-
-    // p {
-    //   // color: white;
-    // }
   }
 
   &__skills {
+    padding: 0.5rem 0rem;
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     gap: 1rem;
+    overflow-x:scroll;
     span {
       background-color: #333333;
       border-radius: 13px;
       padding: 0.5rem;
       
       color: white;
-      // &:nth-child(n + 4) {
-      //   display: none;
-      // }
     }
+    
   }
 }

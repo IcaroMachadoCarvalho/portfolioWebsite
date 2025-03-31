@@ -43,6 +43,10 @@
       gap: 1rem;
       padding-top: 1rem;
       margin-bottom: 1rem;
+
+      div{
+        min-height: 300px;
+      }
     }
 
     &__more {

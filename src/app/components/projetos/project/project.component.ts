@@ -11,8 +11,10 @@ import { NgFor, SlicePipe } from '@angular/common';
 export class ProjectComponent {
   @Input() project:project = {
     id: 0,
+    status: "",
     name: '',
-    description: '',
+    shortDescription: '',
+    longDescription: '',
     imgProject:"",
     urlDeploy: '',
     languages: ['', ''],

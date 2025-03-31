@@ -1,29 +1,52 @@
-<div class="projectDetail container">
+<div class="projectDetail container revealUp">
   <div class="projectDetail__tab">
     <svg
-      class="about__overlay--open"
+      class=""
       tabindex="0"
-      aria-label="Abrir aba de sobre mim"
+      aria-label="Voltar para home"
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
+      routerLink="/home"
     >
       <path
         d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
       ></path>
     </svg>
-    <p>Voltar para home</p>
+    <a routerLink="/home">Voltar para home</a>
   </div>
   <div class="projectDetail__post">
-    <h3>{{project.name}}</h3>
-    <p></p>
-    <!-- <img [src]="project.imgProject" [alt]="'Imagem do projeto' + project.name"> -->
+    <h3>{{ project.name }}</h3>
+    <p>{{ project.shortDescription }}</p>
+    <span
+      class="status"
+      [ngClass]="{
+        done: project.status === 'Finalizado',
+        progress: project.status === 'Em andamento'
+      }"
+    >
+      {{ project.status }}
+    </span>
+
+    <img
+      [src]="project.imgProject"
+      [alt]="'Imagem do projeto ' + project.name"
+    />
     <h4>Sobre</h4>
-    <p>{{project.description}}</p>
+    <p>{{ project.longDescription }}</p>
+
     <h4>Tecnologias</h4>
-    <p></p>
-    <h4>Site</h4>
-    <p></p>
-    <h4>Github</h4>
-    <p>{{project.urlGithub}}</p>
+    <div class="languages">
+      <span *ngFor="let tech of project.languages">
+        {{ tech }}
+      </span>
+    </div>
+    <div class="deploy" *ngIf="project.urlDeploy">
+      <h4>Site</h4>
+      <a [href]="project.urlDeploy">{{ project.urlDeploy }}</a>
+    </div>
+    <div class="github" *ngIf="project.urlGithub">
+      <h4>Github</h4>
+      <a [href]="project.urlGithub">{{ project.urlGithub }}</a>
+    </div>
   </div>
 </div>

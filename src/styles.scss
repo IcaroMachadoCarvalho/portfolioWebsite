@@ -1,5 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+// Fontes
+@font-face {
+  font-family: "lato";
+  src: url(./fonts/Lato-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Bebas Neue";
+  src: url(./fonts/BebasNeue-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --font-sm: 0.875em; /* Fonte pequena */
+  --font-md: 1.124em; /* Fonte média */
+  --font-x-md: 1.667em; /* Fonte extra média */
+  --font-x-lg: 3.075em; /* Fonte extra grande */
+}
+
+/* Estilos para telas maiores que 787px */
+@media (min-width: 787px) {
+  :root {
+    --font-sm: 0.875em;
+    --font-md: 1.124em;
+    --font-x-md: 1.667em;
+    --font-x-lg: 3.075em;
+  }
+}
 
 *,
 *::before,
@@ -33,6 +63,7 @@ button {
   font: inherit;
 }
 
+a,
 button {
   cursor: pointer;
 }
@@ -47,19 +78,92 @@ body {
   scroll-padding: 2.5rem;
 }
 
-html, body{
+html,
+body {
   height: 100dvh;
   width: 100vw;
 }
 
-body{
+body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
+  font-size: var(--font-md);
 }
 
 .container {
+  width: 100%;
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   margin-right: auto;
   margin-left: auto;
+  
+  @media (min-width: 576px) {
+    .container {
+      max-width: 540px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .container {
+      max-width: 720px;
+    }
+  }
+
+  @media (min-width: 992px) {
+    .container {
+      max-width: 960px;
+    }
+  }
+
+  @media (min-width: 1200px) {
+    .container {
+      max-width: 1140px;
+    }
+  }
+}
+
+/* Estilos para telas menores que 787px */
+@media (max-width: 787px) {
+  :root {
+    --font-sm: 0.813em; /* Fonte pequena ajustada */
+    --font-md: 1.011em; /* Fonte média ajustada */
+    --font-x-md: 1.517em; /* Fonte extra média ajustada */
+    --font-x-lg: 2.775em; /* Fonte extra grande ajustada */
+  }
+}
+
+.revealUp {
+  opacity: 0;
+  transform: translateY(100px);
+  animation: revealItemUp 1s ease-out forwards;
+}
+
+/* Animação de subir e opacidade */
+@keyframes revealItemUp {
+  0% {
+    opacity: 0;
+    transform: translateY(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.revealDown {
+  opacity: 0;
+  transform: translateY(-100px);
+  animation: revealItemDown 1s ease-out forwards;
+}
+
+/* Animação de subir e opacidade */
+@keyframes revealItemDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

@@ -1,7 +1,9 @@
 export interface project{
   id: number;
+  status:string;
   name: string;
-  description: string;
+  longDescription: string;
+  shortDescription:string;
   imgProject: string;
   urlGithub?: string;
   urlDeploy?:string;

@@ -1,4 +1,4 @@
-<section class="projects container">
+<section class="projects container revealUp">
   <h1>Projetos</h1>
   <div class="projects__options" role="group" aria-labelledby="sobre-opcoes">
     <label
@@ -77,7 +77,7 @@
   </div>
   <div class="projects__section">
     <div *ngFor="let project of resultQuery | slice:0:index">
-      <app-project [project]="project" [routerLink]="['/projects',project.id]"  ></app-project>
+      <app-project [project]="project" [routerLink]="['/projects',project.id]"></app-project>
     </div>
   </div>
   <button (click)="loadMore()" *ngIf="index < resultQuery.length" class="projects__more">

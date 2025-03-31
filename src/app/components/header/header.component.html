@@ -1,15 +1,17 @@
 <header class="header">
   <div
     class="header__container"
-    [ngClass]="{ scrolled: isScrolled, open: isMenuOpen }"
+    [ngClass]="{ scrolled: isScrolled, open: isMenuOpen, revealDown: isScrolled }"
   >
     <div class="header__tab">
       <!-- Logo -->
-      <img
-        class="header__logo"
-        src="../../../assets/images/imgLogo.png"
-        alt="Logo do site"
-      />
+      <a href="/home#home" aria-label="Ir para home">
+        <img
+          src="../../../assets/images/imgLogo.png"
+          alt="Imagem logo portfoflio"
+          loading="lazy"
+        />
+      </a>
       <!-- Ícone de Menu (Hambúrguer) -->
       <svg
         (click)="toggleTab()"
@@ -34,16 +36,16 @@
       <!-- Links de navegação -->
       <ul class="navBar__links">
         <li>
-          <a href="#home" aria-label="Ir para home">Home</a>
+          <a href="/home#home" aria-label="Ir para home">Home</a>
         </li>
         <li>
-          <a href="#about" aria-label="Ir para sobre">Sobre</a>
+          <a href="/home#about" aria-label="Ir para sobre">Sobre</a>
         </li>
         <li>
-          <a href="#projects" aria-label="Ir para Projetos">Projetos</a>
+          <a href="/home#projects" aria-label="Ir para Projetos">Projetos</a>
         </li>
         <li>
-          <a href="#contact" aria-label="Ir para Contato">Contato</a>
+          <a href="/home#contact" aria-label="Ir para Contato">Contato</a>
         </li>
       </ul>
     </nav>
