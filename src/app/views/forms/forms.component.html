@@ -1,17 +1,72 @@
-<!-- <div class="forms">
-    <form [formGroup]="forms" (ngSubmit)="sendMessage()">
-        <div>
-            <label for="name">Nome</label>
-            <input type="text" formControlName="nome" name="name" placeholder="Digite seu nome">
-        </div>
-        <div>
-            <label for="email">Email</label>
-            <input type="email" formControlName="email" placeholder="Digite seu email">
-        </div>
-        <div>
-            <label for="mensagem">Mensagem</label>
-            <textarea name="message" formControlName="mensagem" placeholder="Digite sua mensagem" id=""></textarea>
-        </div>
-        <button [disabled]="forms.invalid">Enviar</button>
-    </form>
-</div> -->
+<div class="forms">
+  <div class="forms__tab">
+    <svg
+      class=""
+      tabindex="0"
+      aria-label="Voltar para home"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      routerLink="/home"
+    >
+      <path
+        d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+      ></path>
+    </svg>
+    <a routerLink="/home">Voltar para home</a>
+  </div>
+
+  <h1>Entre em contato</h1>
+  <p>Sinta-se a vontade para me enviar uma mensagem!</p>
+
+  <form [formGroup]="form" (ngSubmit)="sendMessage()">
+    <div class="forms__group">
+      <input
+        type="text"
+        formControlName="nome"
+        name="name"
+        id="name"
+        autocomplete="off"
+        placeholder="Nome"
+        autocomplete="name"
+      />
+      <div class="error__message" *ngIf="form.get('nome')?.errors && form.get('nome')?.touched">
+        É necessário preencher o campo
+      </div>
+    </div>
+    <div class="forms__group">
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        autocomplete="off"
+        placeholder="Email"
+        autocomplete="email"
+      />
+      <div class="error__message" *ngIf="form.get('email')?.errors && form.get('email')?.touched">
+        Informe um email válido
+      </div>
+
+    </div>
+    <div class="forms__group">
+      <textarea
+        name="message"
+        formControlName="mensagem"
+        autocomplete="off"
+        id="message"
+        placeholder="Mensagem"
+      ></textarea>
+      <div class="error__message" *ngIf="form.get('mensagem')?.errors?.['required'] && form.get('mensagem')?.touched">
+        O campo mensagem deve ser preenchido
+      </div>
+      <div class="error__message" *ngIf="form.get('mensagem')?.errors?.['minlength'] && form.get('mensagem')?.touched">
+        A mensagem deve ter pelo menos 10 caracteres.
+      </div>
+    </div>
+    <button
+      [ngClass]="form.invalid ? 'invalid' : 'valid'"
+      [disabled]="form.invalid"
+    >
+      Enviar
+    </button>
+  </form>
+</div>
