@@ -1,4 +1,4 @@
-<section class="about container revealUp">
+<section class="about container" [@ShowState]="isVisible ? 'shown' : 'notShown'">
   <div class="background"></div>
   <div class="about__overlay" [ngClass]="{ open: isOpen }">
     <svg

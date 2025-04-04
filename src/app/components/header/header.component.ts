@@ -6,6 +6,7 @@ import { NgClass } from '@angular/common';
   imports: [NgClass],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
+  standalone:true
 })
 export class HeaderComponent {
   isMenuOpen: boolean = false;
@@ -14,7 +15,7 @@ export class HeaderComponent {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  @HostListener('window:scroll', ['$event'])
+  @HostListener('window:scroll')
   onWindowScroll() {
     // Adiciona a classe "scrolled" se a rolagem for maior que 50px
     this.isScrolled = window.scrollY > 15;
