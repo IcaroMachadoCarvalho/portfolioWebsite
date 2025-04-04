@@ -1,10 +1,17 @@
 import { ProjectsService } from '../../services/projects.service';
 import { NgClass, NgFor, NgIf, SlicePipe } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  HostListener,
+  OnInit,
+  ChangeDetectorRef,
+} from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { project } from '../../models/project';
 import { ProjectComponent } from './project/project.component';
 import { RouterLink } from '@angular/router';
+import { shownStateTrigger } from '../../animations';
 
 @Component({
   selector: 'app-projects',
@@ -17,6 +24,7 @@ import { RouterLink } from '@angular/router';
     SlicePipe,
     RouterLink,
   ],
+  animations: [shownStateTrigger],
   templateUrl: './projetos.component.html',
   styleUrls: ['./projetos.component.scss'],
 })
@@ -25,8 +33,13 @@ export class ProjectsComponent implements OnInit {
   projects: project[] = [];
   resultQuery!: project[];
   index: number = 3;
+  isVisible!: boolean;
+  projectElement!: Element | null;
 
-  constructor(private projectService: ProjectsService) {}
+  constructor(
+    private projectService: ProjectsService,
+    private cdr: ChangeDetectorRef
+  ) {}
 
   ngOnInit(): void {
     this.projects = this.projectService.getContentProjects();
@@ -88,5 +101,29 @@ export class ProjectsComponent implements OnInit {
 
   loadMore() {
     this.index += 3;
+  }
+
+  ngAfterViewInit(): void {
+    this.projectElement = document.querySelector('#projects');
+    if (this.projectElement) {
+      this.detectScroll();
+    }
+  }
+
+  @HostListener('window:scroll')
+  onWindowScroll(): void {
+    this.detectScroll();
+  }
+
+  detectScroll(): void {
+    if (this.projectElement) {
+      const rect = this.projectElement.getBoundingClientRect();
+
+      // Verifica se o elemento está visível
+      this.isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+
+      // Força a detecção de mudanças para evitar o erro por não ser feito pelo angular
+      this.cdr.detectChanges();
+    }
   }
 }

@@ -1,4 +1,4 @@
-<section class="projects container revealUp">
+<section class="projects container" [@ShowState]="isVisible ? 'shown' : 'notShown'">
   <h1>Projetos</h1>
   <div class="projects__options" role="group" aria-labelledby="sobre-opcoes">
     <label
