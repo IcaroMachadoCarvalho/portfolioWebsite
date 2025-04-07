@@ -7,6 +7,10 @@
   background-color: transparent;
   z-index: 20;
 
+  @media(min-width: 576px){
+    padding: 0rem 1rem;
+  }
+
   &__container {
     background-color: transparent;
     width: 100%;

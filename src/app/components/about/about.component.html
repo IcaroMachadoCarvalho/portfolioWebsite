@@ -1,4 +1,4 @@
-<section class="about container" [@ShowState]="isVisible ? 'shown' : 'notShown'">
+<section class="about " [@ShowState]="isVisible ? 'shown' : 'notShown'">
   <div class="background"></div>
   <div class="about__overlay" [ngClass]="{ open: isOpen }">
     <svg
@@ -17,7 +17,7 @@
       ></path>
     </svg>
 
-    <div class="about__info" [ngClass]="{ open: isOpen }">
+    <div class="about__info container" [ngClass]="{ open: isOpen }">
       <svg
         class="about__info--close"
         (click)="closeOverlay()"
