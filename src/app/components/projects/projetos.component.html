@@ -1,4 +1,7 @@
-<section class="projects container" [@ShowState]="isVisible ? 'shown' : 'notShown'">
+<section
+  class="projects container"
+  [@ShowState]="isVisible ? 'shown' : 'notShown'"
+>
   <h1>Projetos</h1>
   <div class="projects__options" role="group" aria-labelledby="sobre-opcoes">
     <label
@@ -11,7 +14,6 @@
     <label
       for="vanilla"
       [ngClass]="{ selected: optionChoosed === 'vanilla' }"
-
       aria-label="Mostrar sobre mim"
       >HTML/CSS/JS</label
     >
@@ -19,7 +21,6 @@
     <label
       for="frameworks"
       [ngClass]="{ selected: optionChoosed === 'frameworks' }"
-
       aria-label="Mostrar sobre minha vida profissional"
       >Frameworks</label
     >
@@ -27,7 +28,6 @@
     <label
       for="others"
       [ngClass]="{ selected: optionChoosed === 'others' }"
-
       aria-label="Mostrar sobre minha formação"
       >Outros</label
     >
@@ -76,11 +76,21 @@
     />
   </div>
   <div class="projects__section">
-    <div *ngFor="let project of resultQuery | slice:0:index">
-      <app-project [project]="project" [routerLink]="['/projects',project.id]"></app-project>
+    <div
+      *ngFor="let project of resultQuery | slice : 0 : index; let i = index"
+      [ngClass]="(i + 1) % 3 === 0 ? 'big' : ''"
+    >
+      <app-project
+        [project]="project"
+        [routerLink]="['/projects', project.id]"
+      ></app-project>
     </div>
   </div>
-  <button (click)="loadMore()" *ngIf="index < resultQuery.length" class="projects__more">
+  <button
+    (click)="loadMore()"
+    *ngIf="index < resultQuery.length"
+    class="projects__more"
+  >
     Ver mais
   </button>
 </section>

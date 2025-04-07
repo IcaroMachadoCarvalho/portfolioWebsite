@@ -39,13 +39,29 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      // align-items: center;
       gap: 1rem;
       padding-top: 1rem;
       margin-bottom: 1rem;
 
+      @media(min-width: 576px){
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: start;
+      }
+
       div{
         min-height: 300px;
+        // flex-basis: 150px;
+
+        &.big{
+          width: 100%;
+        }
+        
+        @media (min-width: 576px) {
+          width: 48%;
+          height: 250px;
+        }
       }
     }
 
