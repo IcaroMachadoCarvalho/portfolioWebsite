@@ -22,6 +22,12 @@
       @media (min-width: 576px) {
         width: 55%;
       }
+
+      @media (min-width: 1200px) {
+        background-position: left;
+        width: 35%;
+        background-size: contain;
+      }
     }
 
     &__overlay {
@@ -60,6 +66,8 @@
           transform-origin: center;
           transform: translate(-50%, -50%) rotate(270deg);
         }
+
+
       }
 
       &.open {
@@ -68,7 +76,7 @@
         bottom: 0;
         overflow-y: scroll;
 
-        @media(min-width: 576px){
+        @media (min-width: 576px) {
           left: 0;
         }
       }
@@ -77,6 +85,11 @@
         width: 45%;
         height: 100%;
         left: 55%;
+      }
+      @media (min-width: 1200px) {
+        width: calc(100% - 28%);
+        height: 100%;
+        left: 28%;
       }
     }
 
@@ -106,7 +119,7 @@
           fill: none;
         }
 
-        @media(min-width: 576px){
+        @media (min-width: 576px) {
           transform: rotate(270deg);
         }
       }

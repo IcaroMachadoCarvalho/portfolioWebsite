@@ -9,6 +9,7 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
   imports: [RouterLink, NgIf, NgFor, NgClass],
   templateUrl: './project-detail.component.html',
   styleUrl: './project-detail.component.scss',
+  standalone:true
 })
 export class ProjectDetailComponent implements OnInit {
   project!: project;

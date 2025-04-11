@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component, HostListener, OnInit } from '@angular/core';
 import { NgClass } from '@angular/common';
 
 @Component({
@@ -6,12 +6,25 @@ import { NgClass } from '@angular/common';
   imports: [NgClass],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
-  standalone:true
+  standalone: true,
 })
-export class HeaderComponent {
+export class HeaderComponent implements OnInit{
   isMenuOpen: boolean = false;
-  isScrolled:boolean = false;
-  toggleTab(){
+  isScrolled: boolean = false;
+
+  ngOnInit(): void {
+      if(window.innerWidth >= 767){
+        this.isMenuOpen = true;
+      }
+  }
+
+  @HostListener('window:resize') onResize() {
+    if (window.innerWidth >= 767) {
+      this.isMenuOpen = true;
+    }
+  }
+
+  toggleTab() {
     this.isMenuOpen = !this.isMenuOpen;
   }
 

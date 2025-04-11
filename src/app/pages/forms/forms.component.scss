@@ -2,8 +2,11 @@
   margin: 0 auto;
   margin-top: 70px;
   margin-bottom: 2rem;
-  padding: 0.5rem;
   width: 100%;
+
+  @media (min-width: 767px) {
+    margin-top: 90px;
+  }
 
   &__tab {
     display: flex;

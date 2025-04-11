@@ -13,7 +13,7 @@
       justify-content: start;
       align-items: center;
       gap: 0.5rem;
-      overflow-x: scroll;
+      overflow-x: auto;
       overflow-y: hidden;
       padding: 1rem 0rem;
       padding-left: 0.5rem;
@@ -46,7 +46,7 @@
       @media(min-width: 576px){
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-between;
         align-items: start;
       }
 
@@ -55,12 +55,21 @@
         // flex-basis: 150px;
 
         &.big{
-          width: 100%;
+          width: 100% !important;
         }
-        
+
         @media (min-width: 576px) {
           width: 48%;
           height: 250px;
+        }
+
+        @media (min-width: 767px) {
+          &:nth-child(even){
+            width: 37%;
+          }
+          &:nth-child(odd){
+            width: 60%;
+          }
         }
       }
     }

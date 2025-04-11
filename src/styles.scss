@@ -88,6 +88,8 @@ body {
   font-family: "Lato", sans-serif;
   font-weight: 400;
   font-size: var(--font-md);
+  overflow-x: hidden;
+  line-height: 1.4;
 }
 
 .container {
@@ -96,31 +98,34 @@ body {
   padding-left: 0.5rem;
   margin-right: auto;
   margin-left: auto;
+  max-width: 1200px;
 
   @media (min-width: 576px) {
     & {
-      // padding-left: 1rem;
-      // padding-right: 1rem;
-      max-width: 540px;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      // max-width: 540px;
     }
   }
 
-  @media (min-width: 768px) {
+  @media (min-width: 767px) {
     &{
-      max-width: 720px;
+      padding-left: 2rem;
+      padding-right: 2rem;
+      // max-width: 720px;
     }
   }
 
-  @media (min-width: 992px) {
+  @media (min-width: 1024px) {
     &{
-      max-width: 960px;
+      padding-left: 3rem;
+      padding-right: 3rem;
+      // max-width: 960px;
     }
   }
 
-  @media (min-width: 1200px) {
-    & {
-      max-width: 1140px;
-    }
+  @media(min-width: 1200px){
+    // padding: 0;
   }
 }
 
