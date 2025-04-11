@@ -27,6 +27,7 @@ import { shownStateTrigger } from '../../animations';
   animations: [shownStateTrigger],
   templateUrl: './projetos.component.html',
   styleUrls: ['./projetos.component.scss'],
+  standalone: true
 })
 export class ProjectsComponent implements OnInit {
   optionChoosed: string = 'all';

@@ -30,6 +30,12 @@
       height: auto;
       border-radius: 13px;
       border: 1px solid black;
+      max-width: 650px;
+      margin: 0 auto;
+
+      @media (min-width:767px) {
+        height: 300px;
+      }
     }
 
     p {

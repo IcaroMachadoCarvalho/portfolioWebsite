@@ -6,7 +6,8 @@ import { NgFor, SlicePipe } from '@angular/common';
   selector: 'app-project',
   imports: [NgFor, SlicePipe],
   templateUrl: './project.component.html',
-  styleUrl: './project.component.scss'
+  styleUrl: './project.component.scss',
+  standalone:true
 })
 export class ProjectComponent {
   @Input() project:project = {

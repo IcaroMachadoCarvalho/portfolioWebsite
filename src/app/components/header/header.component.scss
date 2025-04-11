@@ -7,12 +7,38 @@
   background-color: transparent;
   z-index: 20;
 
+  @media (min-width: 576px) {
+    padding: 0rem 1rem;
+  }
+
+  @media (min-width: 767px) {
+    padding: 0rem 2rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 0rem 3rem;
+  }
+
+  @media(min-width: 1200px){
+    // padding: 0rem
+    display: flex;
+    justify-content: center;
+  }
+
   &__container {
+
     background-color: transparent;
     width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
     height: auto;
     border: none;
     transition: 0.5s linear;
+
+    @media(min-width: 1350px){
+      position: relative;
+      left: 6px;
+    }
 
     &.scrolled {
       padding: 0.5rem;
@@ -21,15 +47,21 @@
       backdrop-filter: blur(4px);
     }
 
-    &.open{
+    &.open {
       border: 1px solid black;
       border-radius: 7px;
       backdrop-filter: blur(5px);
       padding-bottom: 0.5rem;
+      padding-top: 0.5rem;
+    }
+    @media (min-width: 767px) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
   }
 
-  &__tab{
+  &__tab {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -41,8 +73,15 @@
       height: 42px;
       border-radius: 5px;
     }
-    svg{
+    svg {
       fill: black;
+      @media (min-width: 767px) {
+        display: none;
+      }
+    }
+
+    @media (min-width: 767px) {
+      width: fit-content;
     }
   }
 
@@ -67,8 +106,6 @@
     }
 
     &__links {
-      // height: 100%;
-      // width: 100%;
       text-align: center;
       display: flex;
       flex-direction: column;
@@ -99,12 +136,16 @@
         &:focus::after {
           width: 100%;
         }
+
+        @media (min-width: 767px) {
+          padding-right: 0.5rem;
+        }
+      }
+      @media (min-width: 767px) {
+        flex-direction: row;
+        width: fit-content;
       }
     }
-    // &.scrolled{
-    //   top: 0;
-    //   left: 0;
-    // }
 
     &.close {
       max-height: 0; /* Fecha a navbar */
@@ -115,6 +156,10 @@
       max-height: 500px; /* Defina o valor adequado dependendo da altura do seu conteúdo */
       opacity: 1; /* Torna a navbar visível */
     }
-
+    @media (min-width: 767px) {
+      width: fit-content;
+      height: 100%;
+      opacity: 1;
+    }
   }
 }
