@@ -10,6 +10,7 @@ export const routes: Routes = [
   {
     path: 'home',
     component: HomeComponent,
+    title: "Ícaro Machado de Carvalho"
   },
   {
     path: 'projects/:id',

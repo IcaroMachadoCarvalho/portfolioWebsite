@@ -109,7 +109,7 @@ body {
   }
 
   @media (min-width: 767px) {
-    &{
+    & {
       padding-left: 2rem;
       padding-right: 2rem;
       // max-width: 720px;
@@ -117,14 +117,14 @@ body {
   }
 
   @media (min-width: 1024px) {
-    &{
+    & {
       padding-left: 3rem;
       padding-right: 3rem;
       // max-width: 960px;
     }
   }
 
-  @media(min-width: 1200px){
+  @media (min-width: 1200px) {
     // padding: 0;
   }
 }
