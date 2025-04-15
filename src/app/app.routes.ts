@@ -18,11 +18,13 @@ export const routes: Routes = [
       import('./pages/project-detail/project-detail.component').then(
         (v) => v.ProjectDetailComponent
       ),
+      title: 'Mais de detalhes do projeto'
   },
   {
     path: 'contact',
     loadComponent: () =>
       import('./pages/forms/forms.component').then((v) => v.FormsComponent),
+    title: "Entre em contato"
   },
   {
     path: '**',
@@ -30,5 +32,6 @@ export const routes: Routes = [
       import('./pages/not-found/not-found.component').then(
         (v) => v.NotFoundComponent
       ),
+      title: "Não encontrado a página volte para home"
   },
 ];

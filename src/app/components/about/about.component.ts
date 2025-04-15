@@ -47,7 +47,6 @@ export class AboutComponent implements OnInit {
     return this.textContent[postion];
   }
 
-  downloadCV() {}
 
   @HostListener('window:scroll')
   onWindowScroll(): void {
