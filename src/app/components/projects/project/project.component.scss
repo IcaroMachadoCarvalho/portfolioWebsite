@@ -7,6 +7,7 @@
   border: 1px solid #333333;
 
   &:hover, &:focus {
+    cursor: pointer;
     img {
       transform: scale(1.1);
     }

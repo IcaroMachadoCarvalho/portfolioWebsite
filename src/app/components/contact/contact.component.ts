@@ -12,7 +12,8 @@ import { shownStateTrigger } from '../../animations';
   imports: [RouterLink],
   animations:[shownStateTrigger],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.scss'
+  styleUrl: './contact.component.scss',
+  standalone:true
 })
 export class ContactComponent {
   email:string = "icarocarvalho028@gmail.com";

@@ -27,7 +27,7 @@ export class ProjectsService {
         'O projeto "linkTreeProfile" é um site pessoal que organiza links de forma eficiente e visualmente atraente. Ele inclui links para portfólio, GitHub, redes sociais e currículo, além de uma apresentação simples sobre o desenvolvedor. O design é responsivo, se adaptando automaticamente a diferentes dispositivos. O layout moderno e otimizado é construído com o uso de Tailwind CSS, enquanto animações suaves e efeitos de transição proporcionam uma navegação interativa e agradável. O projeto foi desenvolvido com foco em usabilidade e estética.',
       shortDescription:
         'LinkTreeProfile é um site pessoal que centraliza links importantes de forma prática e atraente. Utiliza Tailwind CSS e é responsivo, com animações suaves para uma experiência interativa.',
-      imgProject: '../../assets/images/LinkTreeProject.webp',
+      imgProject: '../../assets/images/linkTreeProjectImg.webp',
       urlGithub: 'https://github.com/IcaroMachadoCarvalho/linkTreeProfile',
       urlDeploy: 'https://link-tree-profile.vercel.app/',
       languages: ['Tailwindcss','HTML', 'Javascript', 'Git', 'Github'],

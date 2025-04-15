@@ -25,11 +25,12 @@
         formControlName="nome"
         name="name"
         id="name"
-        autocomplete="off"
+        [attr.aria-invalid]="form.get('nome')?.invalid"
+        aria-describedby="nameInput"
         placeholder="Nome"
         autocomplete="name"
       />
-      <div class="error__message" *ngIf="form.get('nome')?.errors && form.get('nome')?.touched">
+      <div class="error__message" id="nameInput" *ngIf="form.get('nome')?.errors && form.get('nome')?.touched">
         É necessário preencher o campo
       </div>
     </div>
@@ -37,12 +38,14 @@
       <input
         type="email"
         id="email"
+        name="email"
+        [attr.aria-invalid]="form.get('email')?.invalid"
+        aria-describedby="emailInput"
         formControlName="email"
-        autocomplete="off"
         placeholder="Email"
         autocomplete="email"
       />
-      <div class="error__message" *ngIf="form.get('email')?.errors && form.get('email')?.touched">
+      <div class="error__message" id="emailInput" *ngIf="form.get('email')?.errors && form.get('email')?.touched">
         Informe um email válido
       </div>
 
@@ -51,20 +54,22 @@
       <textarea
         name="message"
         formControlName="mensagem"
-        autocomplete="off"
         id="message"
+        [attr.aria-invalid]="form.get('mensagem')?.invalid"
+        aria-describedby="mensagemInput1 mensagemInput2"
         placeholder="Mensagem"
       ></textarea>
-      <div class="error__message" *ngIf="form.get('mensagem')?.errors?.['required'] && form.get('mensagem')?.touched">
+      <div class="error__message" id="mensagemInput1" *ngIf="form.get('mensagem')?.errors?.['required'] && form.get('mensagem')?.touched">
         O campo mensagem deve ser preenchido
       </div>
-      <div class="error__message" *ngIf="form.get('mensagem')?.errors?.['minlength'] && form.get('mensagem')?.touched">
+      <div class="error__message" id="mensagemInput2" *ngIf="form.get('mensagem')?.errors?.['minlength'] && form.get('mensagem')?.touched">
         A mensagem deve ter pelo menos 10 caracteres.
       </div>
     </div>
     <button
       [ngClass]="form.invalid ? 'invalid' : 'valid'"
       [disabled]="form.invalid"
+      [attr.aria-disabled]="form.invalid"
     >
       Enviar
     </button>
