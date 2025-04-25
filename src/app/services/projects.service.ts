@@ -22,19 +22,47 @@ export class ProjectsService {
     {
       id: 2,
       status: 'Finalizado',
+      name: 'Meu portfolio',
+      longDescription:
+        'Este portfólio pessoal foi desenvolvido com Angular, combinando um design moderno e responsivo para oferecer uma experiência de navegação otimizada em diferentes dispositivos. A aplicação foi construída com foco em performance e acessibilidade, permitindo fácil visualização de projetos, habilidades e informações profissionais. O layout é dinâmico e intuitivo, proporcionando uma interação fluida e agradável aos usuários.',
+      shortDescription:
+        'Portfólio pessoal desenvolvido com Angular, utilizando um design responsivo e otimizado.',
+      imgProject: '../../assets/images/portfolioProject.webp',
+      urlGithub: 'https://github.com/IcaroMachadoCarvalho/portfolioWebsite',
+      urlDeploy: '',
+      languages: ['Angular', 'Typescript', 'SASS', 'Git', 'Github'],
+      languagesImgs: ['../../assets/images/html5-original.svg', ''],
+    },
+    {
+      id: 3,
+      status: 'Finalizado',
+      name: 'toDoList',
+      longDescription:
+        'Este projeto consiste em um To-Do List, onde o usuário pode realizar anotações, buscar por blocos de tarefas, editar, concluir e salvar as atividades no localStorage. A aplicação é construída com TypeScript para garantir um melhor controle do fluxo de dados e é estruturada de forma semelhante a um projeto em Angular.',
+      shortDescription:
+        'Lista de tarefas (To-Do) com funcionalidades de adição e remoção de itens, utilizando TypeScript.',
+      imgProject: '../../assets/images/toDoListImg.webp',
+      urlGithub: 'https://github.com/IcaroMachadoCarvalho/toDoList',
+      urlDeploy: 'https://to-do-list-lemon-beta-60.vercel.app/',
+      languages: ['Typescript', 'HTML', 'SASS','Webpack', 'Git', 'Github'],
+      languagesImgs: ['../../assets/images/html5-original.svg', ''],
+    },
+    {
+      id: 4,
+      status: 'Finalizado',
       name: 'LinkTree Profile',
       longDescription:
         'O projeto "linkTreeProfile" é um site pessoal que organiza links de forma eficiente e visualmente atraente. Ele inclui links para portfólio, GitHub, redes sociais e currículo, além de uma apresentação simples sobre o desenvolvedor. O design é responsivo, se adaptando automaticamente a diferentes dispositivos. O layout moderno e otimizado é construído com o uso de Tailwind CSS, enquanto animações suaves e efeitos de transição proporcionam uma navegação interativa e agradável. O projeto foi desenvolvido com foco em usabilidade e estética.',
       shortDescription:
         'LinkTreeProfile é um site pessoal que centraliza links importantes de forma prática e atraente. Utiliza Tailwind CSS e é responsivo, com animações suaves para uma experiência interativa.',
-      imgProject: '../../assets/images/linkTreeProjectImg.webp',
+      imgProject: '../../assets/images/linktTreeImg.webp',
       urlGithub: 'https://github.com/IcaroMachadoCarvalho/linkTreeProfile',
       urlDeploy: 'https://link-tree-profile.vercel.app/',
       languages: ['Tailwindcss','HTML', 'Javascript', 'Git', 'Github'],
       languagesImgs: ['../../assets/images/html5-original.svg', ''],
     },
     {
-      id: 3,
+      id: 5,
       status: 'Finalizado',
       name: 'Ecommerce Page',
       longDescription:
@@ -48,7 +76,7 @@ export class ProjectsService {
       languagesImgs: ['../../assets/images/html5-original.svg', ''],
     },
     {
-      id: 4,
+      id: 6,
       status: 'Finalizado',
       name: 'IntroSection',
       longDescription:
@@ -62,21 +90,7 @@ export class ProjectsService {
       languagesImgs: ['../../assets/images/html5-original.svg', ''],
     },
     {
-      id: 5,
-      status: 'Finalizado',
-      name: 'Meu portfolio',
-      longDescription:
-        'Este portfólio pessoal foi desenvolvido com Angular, combinando um design moderno e responsivo para oferecer uma experiência de navegação otimizada em diferentes dispositivos. A aplicação foi construída com foco em performance e acessibilidade, permitindo fácil visualização de projetos, habilidades e informações profissionais. O layout é dinâmico e intuitivo, proporcionando uma interação fluida e agradável aos usuários.',
-      shortDescription:
-        'Portfólio pessoal desenvolvido com Angular, utilizando um design responsivo e otimizado.',
-      imgProject: '../../assets/images/portfolioProject.webp',
-      urlGithub: 'https://github.com/IcaroMachadoCarvalho/portfolioWebsite',
-      urlDeploy: '',
-      languages: ['Angular', 'Typescript', 'SASS', 'Git', 'Github'],
-      languagesImgs: ['../../assets/images/html5-original.svg', ''],
-    },
-    {
-      id: 6,
+      id: 7,
       status: 'Finalizado',
       name: 'CultivaMais',
       longDescription:
@@ -90,7 +104,7 @@ export class ProjectsService {
       languagesImgs: ['../../assets/images/html5-original.svg', ''],
     },
     {
-      id: 7,
+      id: 8,
       status: 'Finalizado',
       name: 'Rating Component',
       longDescription:
@@ -103,7 +117,7 @@ export class ProjectsService {
       languagesImgs: ['../../assets/images/html5-original.svg', ''],
     },
     {
-      id: 8,
+      id: 9,
       status: 'Finalizado',
       name: 'Jogo-PPT',
       longDescription:
@@ -116,7 +130,7 @@ export class ProjectsService {
       languagesImgs: ['../../assets/images/html5-original.svg', ''],
     },
     {
-      id: 9,
+      id: 10,
       status: 'Finalizado',
       name: 'MyCodes',
       longDescription:
@@ -129,20 +143,6 @@ export class ProjectsService {
       languagesImgs: ['../../assets/images/html5-original.svg', ''],
     },
     {
-      id: 10,
-      status: 'Em andamento',
-      name: 'toDoList',
-      longDescription:
-        'Este projeto consiste em um To-Do List, onde o usuário pode realizar anotações, buscar por blocos de tarefas, editar, concluir e salvar as atividades no localStorage. A aplicação é construída com TypeScript para garantir um melhor controle do fluxo de dados e é estruturada de forma semelhante a um projeto em Angular.',
-      shortDescription:
-        'Lista de tarefas (To-Do) com funcionalidades de adição e remoção de itens, utilizando TypeScript.',
-      imgProject: '../../assets/images/workInProgress.jpg',
-      urlGithub: 'https://github.com/username/todolist',
-      urlDeploy: 'https://todolist.vercel.app/',
-      languages: ['Typescript', 'HTML', 'CSS', 'Git', 'Github'],
-      languagesImgs: ['../../assets/images/html5-original.svg', ''],
-    },
-    {
       id: 11,
       status: 'Em andamento',
       name: 'Multinews',
@@ -151,7 +151,7 @@ export class ProjectsService {
       shortDescription:
         'Aplicativo de notícias com integração de APIs, desenvolvido com React e SASS.',
       imgProject: '../../assets/images/workInProgress.jpg',
-      urlGithub: 'https://github.com/username/multinews',
+      urlGithub: 'https://github.com/IcaroMachadoCarvalho/MultiNews',
       urlDeploy: 'https://multinews.vercel.app/',
       languages: ['React', 'SASS', 'Git', 'Github'],
       languagesImgs: ['../../assets/images/html5-original.svg', ''],
