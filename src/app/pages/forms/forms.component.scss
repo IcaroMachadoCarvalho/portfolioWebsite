@@ -3,6 +3,7 @@
   margin-top: 70px;
   margin-bottom: 2rem;
   width: 100%;
+  font-size: var(--font-xs);
 
   @media (min-width: 767px) {
     margin-top: 90px;
@@ -26,8 +27,12 @@
     }
   }
 
+  h1{
+    text-align: center;
+  }
+
   p {
-    text-align: left;
+    text-align: center;
     margin-top: 0.5rem;
     margin-bottom: 1rem;
   }
@@ -38,6 +43,8 @@
     justify-content: center;
     align-items: center;
     gap: 1rem;
+    margin: 0 auto;
+    max-width: 700px;
 
     .forms__group {
       position: relative;
@@ -45,6 +52,7 @@
 
       input,
       textarea {
+        font-size: var(--font-xs);
         padding: 1rem;
         border: 1.5px solid lightgray;
         border-radius: 1rem;
@@ -63,6 +71,7 @@
         border: 1.5px solid black;
       }
       .error__message{
+        font-size: var(--font-xs);
         color:lightcoral;
         margin-left: 1rem;
         margin-top: 0.5rem;
@@ -70,6 +79,7 @@
     }
 
     button {
+      font-size: var(--font-xs);
       color: white;
       padding: 0.5rem 1rem;
       border: 1.5px solid black;

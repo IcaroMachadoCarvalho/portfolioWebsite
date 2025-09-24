@@ -27,7 +27,7 @@ import { shownStateTrigger } from '../../animations';
   animations: [shownStateTrigger],
   templateUrl: './projetos.component.html',
   styleUrls: ['./projetos.component.scss'],
-  standalone: true
+  standalone: true,
 })
 export class ProjectsComponent implements OnInit {
   optionChoosed: string = 'all';
@@ -75,7 +75,6 @@ export class ProjectsComponent implements OnInit {
         break;
 
       case 'others':
-        console.log('others');
         this.resultQuery = this.projects.filter((item) => {
           return (
             !item.languages.includes('HTML') &&
@@ -126,5 +125,12 @@ export class ProjectsComponent implements OnInit {
       // Força a detecção de mudanças para evitar o erro por não ser feito pelo angular
       this.cdr.detectChanges();
     }
+  }
+
+  scrollTo() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
   }
 }

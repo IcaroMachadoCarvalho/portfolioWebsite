@@ -14,18 +14,30 @@
   font-style: normal;
 }
 
+html {
+  font-size: 22px;
+}
+
 :root {
+  --font-xs: 0.75em; /* Fonte extra pequena */
   --font-sm: 0.875em; /* Fonte pequena */
   --font-md: 1.124em; /* Fonte média */
+  --font-lg: 1.5em; /* Fonte grande */
+  --font-xl: 2em; /* Fonte extra grande */
+  --font-xxl: 2.5em; /* Fonte super grande */
   --font-x-md: 1.667em; /* Fonte extra média */
-  --font-x-lg: 3.075em; /* Fonte extra grande */
+  --font-x-lg: 3.075em; /* Fonte extra extra grande */
 }
 
 /* Estilos para telas maiores que 787px */
 @media (min-width: 787px) {
   :root {
+    --font-xs: 0.75em;
     --font-sm: 0.875em;
     --font-md: 1.124em;
+    --font-lg: 1.5em;
+    --font-xl: 2em;
+    --font-xxl: 2.5em;
     --font-x-md: 1.667em;
     --font-x-lg: 3.075em;
   }
@@ -94,38 +106,30 @@ body {
 
 .container {
   width: 100%;
-  padding-right: 0.5rem;
-  padding-left: 0.5rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
   margin-right: auto;
   margin-left: auto;
-  max-width: 1200px;
+  max-width: 100%; /* Sem limite fixo inicialmente */
 
-  @media (min-width: 576px) {
-    & {
-      padding-left: 1rem;
-      padding-right: 1rem;
-      // max-width: 540px;
-    }
+  @media (min-width: 640px) {
+    max-width: 640px;
   }
 
-  @media (min-width: 767px) {
-    & {
-      padding-left: 2rem;
-      padding-right: 2rem;
-      // max-width: 720px;
-    }
+  @media (min-width: 768px) {
+    max-width: 768px;
   }
 
   @media (min-width: 1024px) {
-    & {
-      padding-left: 3rem;
-      padding-right: 3rem;
-      // max-width: 960px;
-    }
+    max-width: 1024px;
   }
 
-  @media (min-width: 1200px) {
-    // padding: 0;
+  @media (min-width: 1280px) {
+    max-width: 1280px;
+  }
+
+  @media (min-width: 1536px) {
+    max-width: 1536px;
   }
 }
 
@@ -172,5 +176,17 @@ body {
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+// Animação suave infinita
+@keyframes smoothCarousel {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(
+      -50%
+    ); // Move apenas metade, pois temos conteúdo duplicado
   }
 }

@@ -1,26 +1,27 @@
-.skill{
+// skill.component.scss
+.skill {
   width: 70px;
   height: 70px;
+  flex: 0 0 70px; // Importante: tamanho fixo
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 0.5rem;
   padding: 5px;
-  border: 1px solid black;
-  border-radius: 7px;
+  border-radius: 0.5rem;
   transition: 0.7s ease;
-
-  img{
-    height: 50%;
+  
+  img {
+    height: 70%;
     width: auto;
-    aspect-ratio: 1/1;
   }
-
-  p{
+  
+  p {
     font-size: 14px;
   }
-
-  &:hover, &:focus{
+  
+  &:hover, 
+  &:focus {
     transform: translateY(-5px);
   }
 }

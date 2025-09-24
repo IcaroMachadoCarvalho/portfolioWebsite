@@ -13,6 +13,7 @@
       justify-content: start;
       align-items: center;
       gap: 0.5rem;
+      font-size: var(--font-xs);
       overflow-x: auto;
       overflow-y: hidden;
       padding: 1rem 0rem;
@@ -21,6 +22,7 @@
       label {
         padding: 0.5rem;
         border-radius: 13px;
+        cursor: pointer;
         transition: background-color 0.2s ease-in, color 0.3s ease-in-out,
           transform 0.2s ease-in;
         &.selected {
@@ -36,49 +38,27 @@
     }
 
     &__section {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
       gap: 1rem;
       padding-top: 1rem;
       margin-bottom: 1rem;
 
-      @media(min-width: 576px){
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-        align-items: start;
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
       }
 
-      div{
-        min-height: 300px;
-        // flex-basis: 150px;
-
-        &.big{
-          width: 100% !important;
-        }
-
-        @media (min-width: 576px) {
-          width: 48%;
-          height: 250px;
-        }
-
-        @media (min-width: 767px) {
-          &:nth-child(even){
-            width: 37%;
-          }
-          &:nth-child(odd){
-            width: 60%;
-          }
-        }
+      @media (min-width: 1280px) {
+        grid-template-columns: repeat(3, 1fr);
       }
     }
 
     &__more {
       background-color: transparent;
+      padding: 0.5rem 1rem;
       border: 1px solid black;
       border-radius: 50px;
-      padding: 0.5rem 1rem;
+      font-size: var(--font-xs);
       margin: 0 auto;
       transition: 0.5s ease-in-out;
       &:hover,

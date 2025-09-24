@@ -13,12 +13,32 @@
       font-weight: 400;
       font-family: "Bebas Neue", sans-serif;
     }
+
+    p{
+      font-size: var(--font-sm);
+    }
+
+    span{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    a{
+      color: black;
+      font-size: var(--font-sm);
+      &:hover,&:focus{
+        text-decoration: underline;
+      }
+    }
+    
     &__cto{
       display: flex;
       justify-content: start;
       align-items: center;
       flex-wrap: wrap;
       width: 100%;
+      font-size: var(--font-xs);
       gap: 1rem;
       button{
         background-color: transparent;

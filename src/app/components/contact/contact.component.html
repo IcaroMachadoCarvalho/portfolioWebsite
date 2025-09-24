@@ -1,8 +1,30 @@
-<section class="contact container" [@ShowState]="isVisible ? 'shown' : 'notShown'">
-  <h1>Contato</h1>
-  <p>Eu estou aberto a novas oportunidades, sinta-se à vontade para me enviar um e-mail para ver como podemos colaborar.</p>
+<section
+  class="contact container"
+  [@ShowState]="isVisible ? 'shown' : 'notShown'"
+>
+  <h1>Vamos Conversar!</h1>
+  <p>
+    Estou aberto a novas oportunidades, sinta-se à vontade para me enviar um
+    e-mail para ver como podemos colaborar.
+  </p>
+  <span>
+    <img
+      width="24"
+      height="24"
+      src="https://img.icons8.com/sf-regular/48/new-post.png"
+      alt="new-post"
+    />
+    <a href="mailto:icarocarvalho028gmail.com">icarocarvalho028gmail.com</a>
+  </span>
   <div class="contact__cto">
-    <button routerLink="/contact" aria-label="Ir para página de contato">Entre em contato </button>
-    <span href="#" (click)="copyEmail()" aria-label="Copiar e-mail para a área de transferência">Copiar email</span>
+    <button routerLink="/contact" aria-label="Ir para página de contato">
+      Entre em contato
+    </button>
+    <!-- <span
+      href="#"
+      (click)="copyEmail()"
+      aria-label="Copiar e-mail para a área de transferência"
+      >Copiar email</span
+    > -->
   </div>
 </section>

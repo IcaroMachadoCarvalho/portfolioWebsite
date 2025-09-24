@@ -13,7 +13,7 @@ export class ProjectsService {
       longDescription:
         'O site da Luregi Móveis Planejados foi desenvolvido com HTML, Tailwind CSS e JavaScript, garantindo um design moderno e responsivo. Com otimizações de SEO, o projeto oferece uma navegação eficiente, além de facilitar a busca e atrair novos clientes para a empresa.',
       shortDescription:
-        'Luregi Móveis Planejados oferece soluções personalizadas em móveis sob medida, com design moderno e funcional.',
+        'Landing Page de Luregi Móveis Planejados',
       imgProject: '../../assets/images/luregiProject.webp',
       urlDeploy: 'https://luregimoveisplanejados.netlify.app',
       languages: ['HTML', 'Tailwindcss', 'Javascript'],
@@ -22,7 +22,7 @@ export class ProjectsService {
     {
       id: 2,
       status: 'Finalizado',
-      name: 'Meu portfolio',
+      name: 'Portfolio',
       longDescription:
         'Este portfólio pessoal foi desenvolvido com Angular, combinando um design moderno e responsivo para oferecer uma experiência de navegação otimizada em diferentes dispositivos. A aplicação foi construída com foco em performance e acessibilidade, permitindo fácil visualização de projetos, habilidades e informações profissionais. O layout é dinâmico e intuitivo, proporcionando uma interação fluida e agradável aos usuários.',
       shortDescription:

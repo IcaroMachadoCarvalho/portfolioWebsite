@@ -1,46 +1,48 @@
 :host {
   .intro {
     position: relative;
-    height: calc(100dvh + 70px);
+    // height: calc(100dvh + 70px);
+    padding-top: 240px;
+    padding-bottom: 120px;
     overflow: hidden;
     z-index: 0;
-    margin-top: 70px;
+    text-align: center;
 
-    @media(max-width: 234px){
+    @media (max-width: 234px) {
       height: fit-content;
     }
 
-    @media(min-width: 767px){
-      margin-top: 90px;
-    }
+    // @media(min-width: 767px){
+    //   // margin-top: 90px;
+    // }
 
-    &::before {
-      content: "";
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: url("../../../assets/images/imagemFundoIntro.webp");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: contain;
-      transform: rotateZ(225deg) translate(50px, 80px);
-      // Imagem sem fundo filter, com backdrop
-      filter: blur(3px);
-      z-index: -1;
+    // &::before {
+    //   content: "";
+    //   width: 100%;
+    //   height: 100%;
+    //   position: absolute;
+    //   top: 0;
+    //   left: 0;
+    //   right: 0;
+    //   bottom: 0;
+    //   background: url("../../../assets/images/imagemFundoIntro.webp");
+    //   background-repeat: no-repeat;
+    //   background-position: center;
+    //   background-size: contain;
+    //   transform: rotateZ(225deg) translate(50px, 80px);
+    //   // Imagem sem fundo filter, com backdrop
+    //   filter: blur(3px);
+    //   z-index: -1;
 
-      @media (min-width:634px) {
-        height: 80%;
-        width: 80%;
-        top: 70px;
-        left: 15%;
-      }
-    }
+    //   @media (min-width:634px) {
+    //     height: 80%;
+    //     width: 80%;
+    //     top: 70px;
+    //     left: 15%;
+    //   }
+    // }
 
-    h3{
+    h3 {
       font-size: var(--font-md);
     }
     &__name {
@@ -48,10 +50,26 @@
       font-weight: 400;
       font-family: "Bebas Neue", sans-serif;
     }
+
+    .role {
+      width: fit-content;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+
     &__role {
       font-family: "Bebas Neue", sans-serif;
       font-weight: 400;
       font-size: var(--font-x-md);
+      position: relative;
+    }
+    .border__role {
+      bottom: 0px;
+      background-color: black;
+      width: 50%;
+      height: 4px;
+      border-radius: 5px;
+      margin: 0 auto;
     }
 
     &__icons {
@@ -68,38 +86,182 @@
       }
     }
 
-    &__skills {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      margin-top: 1rem;
-      gap: 0.5rem;
+    // Variáveis para customização
+    $carousel-speed: 30s; // Velocidade da animação
+    $carousel-gap: 1rem; // Espaçamento entre itens
+    $skill-width: 150px; // Largura base dos itens
+    $skill-height: 60px; // Altura base dos itens
 
-      @media(min-width: 576px){
-        justify-content: start;
+    // Container principal do carrossel
+    .intro__carousel {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      background: transparent;
+      padding: 2rem 0;
+
+      // Gradientes nas bordas para efeito de fade
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100px;
+        z-index: 2;
+        pointer-events: none;
       }
 
-      .skill {
-        width: 70px;
-        height: 70px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        border: 1px solid black;
-        border-radius: 7px;
-        transition: 0.7s ease;
+      &::before {
+        left: 0;
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 1),
+          rgba(255, 255, 255, 0)
+        );
+      }
 
-        img {
-          height: 50%;
-          width: auto;
-          aspect-ratio: 1/1;
+      &::after {
+        right: 0;
+        background: linear-gradient(
+          to left,
+          rgba(255, 255, 255, 1),
+          rgba(255, 255, 255, 0)
+        );
+      }
+    }
+
+    // Track do carrossel
+    .carousel-track {
+      display: flex;
+      width: fit-content;
+      animation: smoothCarousel $carousel-speed linear infinite;
+
+      // Pausa a animação ao hover
+      &:hover {
+        animation-play-state: paused;
+      }
+    }
+
+    // Grupos de itens
+    .group {
+      display: flex;
+      gap: $carousel-gap;
+      align-items: center;
+      padding: 0 $carousel-gap;
+
+      // Garante que os grupos tenham o mesmo tamanho
+      flex-shrink: 0;
+    }
+
+    // Estilos para os itens de skill (app-skill)
+    app-skill {
+      display: block;
+      flex-shrink: 0;
+
+      // Estilos base para o componente
+      width: $skill-width;
+      height: $skill-height;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 500;
+      font-size: 0.9rem;
+      text-align: center;
+      transition: all 0.3s ease;
+      cursor: pointer;
+
+      // Efeito hover
+      &:hover {
+        transform: translateY(-5px) scale(1.05);
+      }
+    }
+
+    // Responsividade
+    @media (max-width: 1200px) {
+      .intro__carousel {
+        &::before,
+        &::after {
+          width: 80px;
         }
+      }
 
-        &:hover,
-        &:focus {
-          transform: translateY(-5px);
+      app-skill {
+        width: 130px;
+        height: 55px;
+        font-size: 0.85rem;
+      }
+
+      .pointer--one {
+        left: 15px;
+      }
+
+      .pointer--two {
+        right: 15px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .intro__carousel {
+        padding: 1.5rem 0;
+
+        &::before,
+        &::after {
+          width: 60px;
+        }
+      }
+
+      .carousel-track {
+        animation-duration: 25s; // Mais rápido em mobile
+      }
+
+      .group {
+        gap: 0.8rem;
+        padding: 0 0.8rem;
+      }
+
+      app-skill {
+        width: 120px;
+        height: 50px;
+        font-size: 0.8rem;
+        border-radius: 6px;
+      }
+
+      .pointer--one,
+      .pointer--two {
+        display: none; // Remove ponteiros em mobile
+      }
+    }
+
+    @media (max-width: 480px) {
+      .intro__carousel {
+        padding: 1rem 0;
+
+        &::before,
+        &::after {
+          width: 40px;
+        }
+      }
+
+      .carousel-track {
+        animation-duration: 20s; // Ainda mais rápido
+      }
+
+      .group {
+        gap: 0.6rem;
+        padding: 0 0.6rem;
+      }
+
+      app-skill {
+        width: 100px;
+        height: 45px;
+        font-size: 0.75rem;
+        border-radius: 4px;
+
+        &:hover {
+          transform: translateY(-2px) scale(1.02); // Hover mais sutil em mobile
         }
       }
     }
@@ -111,10 +273,42 @@
       margin: 0 auto;
       margin-top: 1rem;
       transition: transform 0.7s ease-in-out;
-      
-      &:hover, &:focus{
+
+      &:hover,
+      &:focus {
         transform: translateY(10px);
       }
     }
   }
 }
+// &__skills {
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   flex-wrap: wrap;
+//   margin-top: 1rem;
+//   gap: 0.5rem;
+
+//   .skill {
+//     width: 70px;
+//     height: 70px;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     border: 1px solid black;
+//     border-radius: 7px;
+//     transition: 0.7s ease;
+
+//     img {
+//       height: 50%;
+//       width: auto;
+//       aspect-ratio: 1/1;
+//     }
+
+//     &:hover,
+//     &:focus {
+//       transform: translateY(-5px);
+//     }
+//   }
+// }

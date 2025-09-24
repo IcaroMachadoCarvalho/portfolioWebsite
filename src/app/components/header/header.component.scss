@@ -1,58 +1,27 @@
 .header {
   position: fixed;
-  top: 0.5rem;
+  top: 0rem;
   left: 0;
-  padding: 0rem 0.5rem;
   width: 100%;
-  background-color: transparent;
   z-index: 20;
 
-  @media (min-width: 576px) {
-    padding: 0rem 1rem;
-  }
-
-  @media (min-width: 767px) {
-    padding: 0rem 2rem;
-  }
-
-  @media (min-width: 1024px) {
-    padding: 0rem 3rem;
-  }
-
-  @media(min-width: 1200px){
-    // padding: 0rem
-    display: flex;
-    justify-content: center;
-  }
-
   &__container {
-
     background-color: transparent;
-    width: 100%;
-    max-width: 1100px;
-    margin: 0 auto;
     height: auto;
     border: none;
+    border-radius: 50px;
     transition: 0.5s linear;
-
-    @media(min-width: 1350px){
-      position: relative;
-      left: 6px;
-    }
 
     &.scrolled {
       padding: 0.5rem;
-      border: 1px solid black;
-      border-radius: 7px;
-      backdrop-filter: blur(4px);
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     }
 
     &.open {
-      border: 1px solid black;
-      border-radius: 7px;
-      backdrop-filter: blur(5px);
-      padding-bottom: 0.5rem;
-      padding-top: 0.5rem;
+      padding: 0.5rem;
+      background-color: white;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
     }
     @media (min-width: 767px) {
       display: flex;
@@ -65,8 +34,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: fit-content;
 
     img {
       width: auto;
@@ -92,9 +59,9 @@
     left: 0;
     width: 100%;
     height: auto;
-    overflow: hidden; /* Impede que o conteúdo saia da área visível */
-    opacity: 0; /* Inicialmente invisível */
-    max-height: 0; /* Inicialmente com altura zero */
+    overflow: hidden;
+    opacity: 0;
+    max-height: 0;
     z-index: 20;
     transition: max-height 0.7s ease-out, opacity 0.7s ease-out;
 
@@ -111,14 +78,28 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      gap: 1.5rem;
+      gap: 0.5rem;
+
+      li:last-child {
+        background-color: black;
+        border-radius: 50px;
+        padding: 0.2rem 0.4rem;
+        transition: 0.5s ease-in-out;
+        a {
+          color: white;
+        }
+
+        &:hover,
+        &:focus {
+          opacity: 0.7;
+        }
+      }
 
       a {
         position: relative;
         color: black;
-        font-size: var(--font-md);
-        // font-size: 1.5rem;
-        padding: 0.2rem;
+        font-size: var(--font-xs);
+        padding: 0.1rem;
         width: auto;
         &::after {
           content: "";
@@ -129,32 +110,30 @@
           bottom: 0;
           left: 0;
           border-radius: 13px;
-          transition: width 0.5s ease-in-out;
+          transition: width 0.25s linear;
         }
 
         &:hover::after,
         &:focus::after {
           width: 100%;
         }
-
-        @media (min-width: 767px) {
-          padding-right: 0.5rem;
-        }
       }
+
       @media (min-width: 767px) {
         flex-direction: row;
         width: fit-content;
+        gap: 1rem;
       }
     }
 
     &.close {
-      max-height: 0; /* Fecha a navbar */
-      opacity: 0; /* Torna a navbar invisível */
+      max-height: 0;
+      opacity: 0;
     }
 
     &.open {
-      max-height: 500px; /* Defina o valor adequado dependendo da altura do seu conteúdo */
-      opacity: 1; /* Torna a navbar visível */
+      max-height: 500px;
+      opacity: 1;
     }
     @media (min-width: 767px) {
       width: fit-content;

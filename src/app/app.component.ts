@@ -1,3 +1,4 @@
+import { style } from '@angular/animations';
 import { Component, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
@@ -29,7 +30,8 @@ export class AppComponent implements OnInit {
     // Configurando Open Graph (para redes sociais)
     this.metaService.updateTag({ property: 'og:title', content: 'Ícaro Machado | Desenvolvedor Full Stack' });
     this.metaService.updateTag({ property: 'og:description', content: 'Confira o meu portfólio como desenvolvedor Full Stack, com projetos e experiências práticas no mercado de tecnologia.' });
-    this.metaService.updateTag({ property: 'og:image', content: 'https://example.com/imagem-do-perfil.jpg' });
-    this.metaService.updateTag({ property: 'og:url', content: 'https://www.exemplo.com' });
+    this.metaService.updateTag({ property: 'og:image', content: 'https://icaromachado.vercel.app/assets/images/imgLogo.png' });
+    this.metaService.updateTag({ property: 'og:url', content: 'https://icaromachado.vercel.app' });
+
   }
 }
