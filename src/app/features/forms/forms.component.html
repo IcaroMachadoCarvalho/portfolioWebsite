@@ -1,0 +1,98 @@
+<div class="forms container revealUp">
+  <div class="forms__tab">
+    <svg
+      class=""
+      tabindex="0"
+      aria-label="Voltar para home"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      routerLink="/"
+    >
+      <path
+        d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+      ></path>
+    </svg>
+    <a routerLink="/">Voltar para home</a>
+  </div>
+
+  <h1>Entre em contato</h1>
+  <p>Sinta-se a vontade para me enviar uma mensagem!</p>
+
+  <form [formGroup]="form" (ngSubmit)="sendMessage()">
+    <div class="forms__group">
+      <input
+        type="text"
+        formControlName="nome"
+        name="name"
+        id="name"
+        [attr.aria-invalid]="form.get('nome')?.invalid"
+        aria-describedby="nameInput"
+        placeholder="Nome"
+        autocomplete="name"
+      />
+      <div
+        class="error__message"
+        id="nameInput"
+        *ngIf="form.get('nome')?.errors && form.get('nome')?.touched"
+      >
+        É necessário preencher o campo
+      </div>
+    </div>
+    <div class="forms__group">
+      <input
+        type="email"
+        id="email"
+        name="email"
+        [attr.aria-invalid]="form.get('email')?.invalid"
+        aria-describedby="emailInput"
+        formControlName="email"
+        placeholder="Email"
+        autocomplete="email"
+      />
+      <div
+        class="error__message"
+        id="emailInput"
+        *ngIf="form.get('email')?.errors && form.get('email')?.touched"
+      >
+        Informe um email válido
+      </div>
+    </div>
+    <div class="forms__group">
+      <textarea
+        name="message"
+        formControlName="mensagem"
+        id="message"
+        [attr.aria-invalid]="form.get('mensagem')?.invalid"
+        aria-describedby="mensagemInput1 mensagemInput2"
+        placeholder="Mensagem"
+      ></textarea>
+      <div
+        class="error__message"
+        id="mensagemInput1"
+        *ngIf="
+          form.get('mensagem')?.errors?.['required'] &&
+          form.get('mensagem')?.touched
+        "
+      >
+        O campo mensagem deve ser preenchido
+      </div>
+      <div
+        class="error__message"
+        id="mensagemInput2"
+        *ngIf="
+          form.get('mensagem')?.errors?.['minlength'] &&
+          form.get('mensagem')?.touched
+        "
+      >
+        A mensagem deve ter pelo menos 10 caracteres.
+      </div>
+    </div>
+    <button
+      [ngClass]="form.invalid ? 'invalid' : 'valid'"
+      [disabled]="form.invalid"
+      [attr.aria-disabled]="form.invalid"
+    >
+      Enviar
+    </button>
+  </form>
+</div>
