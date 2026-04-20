@@ -1,0 +1,75 @@
+:host {
+  .contact {
+    padding-top: 1rem;
+    padding-bottom: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+    gap: 1rem;
+
+    h1 {
+      font-size: var(--font-x-lg);
+      font-weight: 400;
+      font-family: "Bebas Neue", sans-serif;
+    }
+
+    p {
+      font-size: var(--font-sm);
+    }
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    a {
+      color: black;
+      font-size: var(--font-sm);
+      &:hover,
+      &:focus {
+        text-decoration: underline;
+      }
+    }
+
+    &__cto {
+      display: flex;
+      justify-content: start;
+      align-items: center;
+      flex-wrap: wrap;
+      width: 100%;
+      font-size: var(--font-xs);
+      gap: 1rem;
+      a.cta-button {
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+
+        padding: 0.5rem 1rem;
+        border-radius: 50px;
+        border: 1px solid black;
+
+        font-size: inherit; // ou var(--font-xs / sm, conforme quiser)
+        font-family: inherit;
+        color: black;
+        text-decoration: none;
+
+        transition: 0.5s ease-in-out;
+
+        &:hover,
+        &:focus {
+          background-color: black;
+          color: white;
+          text-decoration: none;
+        }
+      }
+    }
+    a {
+      color: black;
+    }
+    span {
+      cursor: pointer;
+    }
+  }
+}
