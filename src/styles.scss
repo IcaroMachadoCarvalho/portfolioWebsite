@@ -1,48 +1,35 @@
 /* You can add global styles to this file, and also import other style files */
-// Fontes
-@font-face {
-  font-family: "lato";
-  src: url(./assets/fonts/Lato-Regular.ttf);
-  font-weight: normal;
-  font-style: normal;
-}
+/* Import das variáveis */
+@use "./_variables" as *;
+
+/* Fontes */
+// @font-face {
+//   font-family: "Lato";
+//   src: url(./assets/fonts/Lato-Regular.ttf);
+//   font-weight: normal;
+//   font-style: normal;
+// }
 
 @font-face {
   font-family: "Bebas Neue";
-  src: url(./assets/fonts/BebasNeue-Regular.ttf);
+  src: url("/assets/fonts/BebasNeue-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
 }
 
-html {
-  font-size: 22px;
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter_18pt-Regular.ttf") format("truetype");
+  font-weight: 400;
 }
 
-:root {
-  --font-xs: 0.75em; /* Fonte extra pequena */
-  --font-sm: 0.875em; /* Fonte pequena */
-  --font-md: 1.124em; /* Fonte média */
-  --font-lg: 1.5em; /* Fonte grande */
-  --font-xl: 2em; /* Fonte extra grande */
-  --font-xxl: 2.5em; /* Fonte super grande */
-  --font-x-md: 1.667em; /* Fonte extra média */
-  --font-x-lg: 3.075em; /* Fonte extra extra grande */
+@font-face {
+  font-family: "Inter";
+  src: url("/assets/fonts/Inter_18pt-Bold.ttf") format("truetype");
+  font-weight: 700;
 }
 
-/* Estilos para telas maiores que 787px */
-@media (min-width: 787px) {
-  :root {
-    --font-xs: 0.75em;
-    --font-sm: 0.875em;
-    --font-md: 1.124em;
-    --font-lg: 1.5em;
-    --font-xl: 2em;
-    --font-xxl: 2.5em;
-    --font-x-md: 1.667em;
-    --font-x-lg: 3.075em;
-  }
-}
-
+/* Reset */
 *,
 *::before,
 *::after {
@@ -84,72 +71,59 @@ input {
   width: 100%;
 }
 
+/* HTML / BODY */
 html,
 body {
   scroll-behavior: smooth;
   scroll-padding: 2.5rem;
-}
-
-html,
-body {
   height: fit-content;
   width: 100vw;
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: $font-inter;
   font-weight: 400;
-  font-size: var(--font-md);
+  font-size: $font-md;
   overflow-x: hidden;
   line-height: 1.4;
+  background-color: $bg-dark;
 }
 
+/* Container */
 .container {
   width: 100%;
-  padding-right: 1rem;
-  padding-left: 1rem;
-  margin-right: auto;
-  margin-left: auto;
-  max-width: 100%; /* Sem limite fixo inicialmente */
+  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 100%;
 
-  @media (min-width: 640px) {
-    max-width: 640px;
+  @media (min-width: $breakpoint-sm) {
+    max-width: $breakpoint-sm;
   }
 
-  @media (min-width: 768px) {
-    max-width: 768px;
+  @media (min-width: $breakpoint-md) {
+    max-width: $breakpoint-md;
   }
 
-  @media (min-width: 1024px) {
-    max-width: 1024px;
+  @media (min-width: $breakpoint-lg) {
+    max-width: $breakpoint-lg;
   }
 
-  @media (min-width: 1280px) {
-    max-width: 1280px;
+  @media (min-width: $breakpoint-xl) {
+    max-width: $breakpoint-xl;
   }
 
-  @media (min-width: 1536px) {
-    max-width: 1536px;
+  @media (min-width: $breakpoint-xxl) {
+    max-width: $breakpoint-xxl;
   }
 }
 
-/* Estilos para telas menores que 787px */
-@media (max-width: 787px) {
-  :root {
-    --font-sm: 0.813em; /* Fonte pequena ajustada */
-    --font-md: 1.011em; /* Fonte média ajustada */
-    --font-x-md: 1.517em; /* Fonte extra média ajustada */
-    --font-x-lg: 2.775em; /* Fonte extra grande ajustada */
-  }
-}
-
+/* Animações */
 .revealUp {
   opacity: 0;
   transform: translateY(100px);
   animation: revealItemUp 1s ease-out forwards;
 }
 
-/* Animação de subir e opacidade */
 @keyframes revealItemUp {
   0% {
     opacity: 0;
@@ -167,7 +141,6 @@ body {
   animation: revealItemDown 1s ease-out forwards;
 }
 
-/* Animação de subir e opacidade */
 @keyframes revealItemDown {
   0% {
     opacity: 0;
@@ -179,14 +152,12 @@ body {
   }
 }
 
-// Animação suave infinita
+/* Carousel */
 @keyframes smoothCarousel {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(
-      -50%
-    ); // Move apenas metade, pois temos conteúdo duplicado
+    transform: translateX(-50%);
   }
 }

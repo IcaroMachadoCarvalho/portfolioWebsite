@@ -2,8 +2,6 @@
   <div
     class="container header__container"
     [ngClass]="{
-      scrolled: isScrolled,
-      open: isMenuOpen,
       revealDown: isScrolled,
     }"
   >
@@ -38,7 +36,7 @@
               <path
                 id="Vector"
                 d="M21 21L12 12M12 12L3 3M12 12L21.0001 3M12 12L3 21.0001"
-                stroke="#000000"
+                stroke="currentColor"
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
@@ -87,11 +85,27 @@
           >
         </li>
         <li>
-          <a href="/contact" (click)="closeNav()" aria-label="Ir para Contato"
+          <a
+            href="#expiriences"
+            (click)="closeNav()"
+            aria-label="Ir para Projetos"
+            >Experiências</a
+          >
+        </li>
+        <li>
+          <a href="/contact" (click)="closeNav()" aria-label="Ir para Projetos"
             >Contato</a
           >
         </li>
       </ul>
     </nav>
+
+    <a
+      class="header__contact"
+      href="/contact"
+      (click)="closeNav()"
+      aria-label="Ir para Contato"
+      >Contato</a
+    >
   </div>
 </header>
