@@ -70,26 +70,12 @@ intro.html novo
     </div>
   </div>
 
-  <div class="intro__carousel">
-    <div class="pointer--one"></div>
-
-    <div class="carousel-track">
-      <!-- Primeiro grupo -->
-
-      <div class="group">
-        <app-skill *ngFor="let skills of skillsArray" [info]="skills">
-        </app-skill>
-      </div>
-
-      <!-- Segundo grupo (duplicado) -->
-
-      <div class="group">
-        <app-skill *ngFor="let skills of skillsArray" [info]="skills">
-        </app-skill>
-      </div>
+  <div class="hero__skills">
+    <h3 class="skills-title">STACK ATUAL</h3>
+    <div class="skills-wrapper">
+      <app-skill *ngFor="let skills of skillsArray" [info]="skills">
+      </app-skill>
     </div>
-
-    <div class="pointer--two"></div>
   </div>
 
   <a class="intro__chevron" href="/#about" aria-label="Rolar para baixo">

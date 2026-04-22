@@ -1,4 +1,3 @@
-export interface skill{
-  imgLink: string,
-  techName:string
+export interface skill {
+  techName: string;
 }
