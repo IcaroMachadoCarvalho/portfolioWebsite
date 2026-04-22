@@ -14,6 +14,7 @@ import { NgFor } from '@angular/common';
 export class IntroComponent implements OnInit {
   name: string = 'Ícaro Machado de Carvalho';
   role: string = 'Desenvolvedor Full-Stack';
+
   skillsArray!: skill[];
   isVisible!: boolean;
   introElement!: Element | null;
