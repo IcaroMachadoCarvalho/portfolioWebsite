@@ -1,42 +1,35 @@
-<section [@ShowState]="isVisible ? 'shown' : 'notShown'">
-  <div class="container">
-    <h1 class="title">Sobre</h1>
-    <div class="about">
-      <div class="background"></div>
-      <div class="about__content">
-        <div class="accordion">
-          <div
-            class="accordion__item"
-            *ngFor="let item of accordionItems; let i = index"
-          >
-            <button class="accordion__header" (click)="toggleAccordion(i)">
-              {{ item.section }}
-              <span>{{ isActive(i) ? "-" : "+" }}</span>
-            </button>
-            <div
-              class="accordion__content"
-              [@accordionState]="isActive(i) ? 'open' : 'closed'"
-              [innerHTML]="item.content">
-            >
-              
-            </div>
-          </div>
-        </div>
+<section class="about">
+  <div class="about__wrapper container">
+    <div class="about__grid">
+      <div class="about__main">
+        <header
+          class="about__header"
+          #aboutElement
+          [class.revealUp]="isVisible"
+        >
+          <h1 class="about__title">sobre mim</h1>
+          <p class="about__text">
+            Sou um desenvolvedor com
+            <strong>2 anos de experiência</strong> que acredita que a tecnologia
+            deve ser tão funcional quanto bem estruturada. Atualmente cursando
+            <strong>Engenharia de Software na FIAP</strong>, venho consolidando
+            minha base técnica, com foco na criação de soluções que resolvem
+            <strong>problemas reais</strong> de forma
+            <strong>escalável</strong> e de <strong>fácil manutenção</strong>.
+          </p>
+
+          <p class="about__text" id="experiences">
+            Busco ambientes desafiadores e colaborativos onde eu possa aplicar
+            meu compromisso com a <strong>performance e a organização</strong>,
+            garantindo que cada linha de código contribua para a construção de
+            <strong>sistemas robustos</strong>.
+          </p>
+        </header>
+
+        <app-experiences></app-experiences>
       </div>
+
+      <app-tools></app-tools>
     </div>
-    <a
-      class="about__cv"
-      tabindex="0"
-      href="../../../assets/Cv/Ícaro Machado de Carvalho CV 07_2025.pdf"
-      aria-label="Baixar currículo"
-      download
-    >
-      Baixar CV
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path
-          d="M11.292 16.706a1 1 0 0 0 1.416 0l3-3a1 1 0 0 0-1.414-1.414L13 13.586V4a1 1 0 0 0-2 0v9.586l-1.293-1.293a1 1 0 0 0-1.414 1.414zM17 19H7a1 1 0 0 0 0 2h10a1 1 0 0 0 0-2z"
-        />
-      </svg>
-    </a>
   </div>
 </section>

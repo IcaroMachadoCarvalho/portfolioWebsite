@@ -1,138 +1,53 @@
-:host {
-  section {
-    position: relative;
-    height: auto;
-    margin-top: 1rem;
-    padding: 1rem 0rem;
-    background-color: #333333;
-    border-radius: 16px 16px 0px 0px;
+@use "../../../../../_variables" as *;
 
-    .title {
-      color: white;
-      font-size: 3rem;
-      font-weight: 400;
-      font-family: "Bebas Neue", sans-serif;
+.about {
+  background-color: #0d0d0d;
+  color: #fff;
+  padding: 80px 20px;
+  // min-height: 100vh;
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 60px;
+    // max-width: 1200px;
+    margin: 0 auto;
+
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr;
     }
-    .about {
-      width: 100%;
-      height: 100%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
+  }
 
-      .background {
-        display: none;
-        margin: 0 auto;
-        border-radius: 50%;
+  &__label {
+    display: block;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: $color-primary;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
 
-        background:
-          url(../../../../../assets/images/imagem_cortada_circular-removebg-preview.png),
-          #333333;
-        border: 2px solid white;
-        background-repeat: no-repeat;
-        background-position: center;
-        background-size: cover;
-        transition: 0.7s ease-in-out;
-        filter: grayscale(100%);
+  &__title {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 1.2;
+    font-family: $font-inter;
+    color: $color-primary;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
 
-        &:hover,
-        &:focus {
-          transform: scale(1.1);
-        }
-
-        @media (min-width: 640px) {
-          display: block;
-          width: 300px;
-          height: 300px;
-        }
-        @media (min-width: 1024px) {
-          width: 325px;
-          height: 325px;
-          margin: 0;
-        }
-      }
-
-      &__content {
-        width: 100%;
-        // color: white;
-
-        @media (min-width: 768px) {
-          width: 50%;
-        }
-        @media (min-width: 1024px) {
-          width: 60%;
-        }
-        @media (min-width: 1280px) {
-          width: 70%;
-        }
-
-        .accordion {
-          margin: 20px auto;
-        }
-
-        .accordion__item {
-          margin-bottom: 5px;
-          border-top: 1px solid white;
-          &:last-child {
-            border-bottom: 1px solid white;
-          }
-        }
-
-        .accordion__header {
-          color: white;
-          padding: 10px;
-          text-align: left;
-          border: none;
-          width: 100%;
-          cursor: pointer;
-          font-size: var(--font-sm);
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-        }
-
-        .accordion__content {
-          text-align: justify;
-          display: flex;
-          flex-direction: column;
-          gap: 0.5rem;
-          padding: 10px;
-          color: white;
-          font-size: var(--font-xs);
-        }
-      }
+  &__text {
+    color: #a1a1aa;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    strong {
+      color: $white;
+      font-weight: 600;
     }
-    .about__cv {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      gap: 0.25rem;
-      width: fit-content;
-      font-size: var(--font-xs);
-      background-color: transparent;
-      color: white;
-      border: 1px solid white;
-      border-radius: 50px;
-      padding: 0.5rem 1rem;
-      margin: 1.5rem auto;
-      transition: 0.7s ease-in-out;
-      svg {
-        height: 1.5rem;
-        width: 1.5rem;
-        fill: white;
-        transition: 0.7s ease-in-out;
-      }
-
-      &:hover,
-      &:focus {
-        background-color: white;
-        color: black;
-        svg {
-          fill: black;
-        }
-      }
+    &:last-child {
+      margin-bottom: 3rem;
     }
   }
 }

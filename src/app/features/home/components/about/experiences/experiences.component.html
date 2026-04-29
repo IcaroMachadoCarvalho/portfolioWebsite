@@ -1,0 +1,26 @@
+<div class="about__journey" #experiencesElement [class.revealUp]="isVisible">
+  <span class="about__label">Experiências</span>
+  <div *ngFor="let experience of experiencesData">
+    <div class="journey-item">
+      <div class="journey-dot"></div>
+      <div class="journey-content">
+        <div class="journey-header">
+          <h3>{{ experience.role }}</h3>
+          <span
+            class="date-badge"
+            [ngClass]="{
+              highlight: experience.date.toLowerCase().includes('presente'),
+            }"
+            >{{ experience.date }}</span
+          >
+        </div>
+        <p class="company">{{ experience.company }}</p>
+        <ul class="description">
+          <li *ngFor="let description of experience.description">
+            {{ description }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
