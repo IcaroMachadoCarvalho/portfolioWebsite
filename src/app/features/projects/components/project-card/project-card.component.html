@@ -35,7 +35,12 @@
         </svg>
         Demo
       </a>
-      <a [href]="project.urlGithub" target="_blank" class="link">
+      <a
+        *ngIf="project.urlGithub"
+        [href]="project.urlGithub"
+        target="_blank"
+        class="link"
+      >
         <svg
           width="15"
           height="9"
