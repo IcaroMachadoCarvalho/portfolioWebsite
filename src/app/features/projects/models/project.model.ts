@@ -1,12 +1,13 @@
-export interface project{
+export interface Project {
   id: number;
-  status:string;
+  status: string;
   name: string;
+  isFeatured?: boolean;
   longDescription: string;
-  shortDescription:string;
+  shortDescription: string;
   imgProject: string;
   urlGithub?: string;
-  urlDeploy?:string;
+  urlDeploy?: string;
   languages: string[];
   languagesImgs: string[];
 }

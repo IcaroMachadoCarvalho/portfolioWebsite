@@ -1,15 +1,14 @@
-import { ProjectsService } from '../../../../shared/services/projects.service';
+import { ProjectsService } from '../../../projects/services/projects.service';
 import { NgClass, NgFor, NgIf, SlicePipe } from '@angular/common';
 import {
-  AfterViewInit,
   Component,
   HostListener,
   OnInit,
   ChangeDetectorRef,
 } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { project } from './project/project.model';
-import { ProjectComponent } from './project/project.component';
+import { Project } from '../../../projects/models/project.model';
+import { ProjectCardComponent } from '../../../projects/components/project-card/project-card.component';
 import { RouterLink } from '@angular/router';
 import { shownStateTrigger } from '../../../../shared/animations/animations';
 
@@ -20,7 +19,7 @@ import { shownStateTrigger } from '../../../../shared/animations/animations';
     FormsModule,
     NgFor,
     NgIf,
-    ProjectComponent,
+    ProjectCardComponent,
     SlicePipe,
     RouterLink,
   ],
@@ -31,8 +30,8 @@ import { shownStateTrigger } from '../../../../shared/animations/animations';
 })
 export class ProjectsComponent implements OnInit {
   optionChoosed: string = 'all';
-  projects: project[] = [];
-  resultQuery!: project[];
+  projects: Project[] = [];
+  resultQuery!: Project[];
   index: number = 3;
   isVisible!: boolean;
   projectElement!: Element | null;

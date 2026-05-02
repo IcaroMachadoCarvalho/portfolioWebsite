@@ -1,0 +1,55 @@
+<article class="project-card revealUp">
+  <div class="project-card__image-container">
+    <img [src]="project.imgProject" [alt]="'Capa do projeto ' + project.name" />
+  </div>
+
+  <div class="project-card__content">
+    <h2 class="project-card__title">{{ project.name }}</h2>
+    <p class="project-card__description">{{ project.shortDescription }}</p>
+
+    <div class="project-card__tags">
+      <!-- Exibindo as tecnologias principais -->
+      <span class="tag" *ngFor="let item of project.languages | slice: 0 : 3">
+        {{ item | uppercase }}
+      </span>
+    </div>
+
+    <footer class="project-card__actions">
+      <a
+        *ngIf="project.urlDeploy"
+        [href]="project.urlDeploy"
+        target="_blank"
+        class="link"
+      >
+        <svg
+          width="15"
+          height="8"
+          viewBox="0 0 15 8"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M6.75 7.5H3.75C2.7125 7.5 1.82812 7.13437 1.09687 6.40312C0.365625 5.67187 0 4.7875 0 3.75C0 2.7125 0.365625 1.82812 1.09687 1.09687C1.82812 0.365625 2.7125 0 3.75 0H6.75V1.5H3.75C3.125 1.5 2.59375 1.71875 2.15625 2.15625C1.71875 2.59375 1.5 3.125 1.5 3.75C1.5 4.375 1.71875 4.90625 2.15625 5.34375C2.59375 5.78125 3.125 6 3.75 6H6.75V7.5V7.5M4.5 4.5V3H10.5V4.5H4.5V4.5M8.25 7.5V6H11.25C11.875 6 12.4062 5.78125 12.8438 5.34375C13.2812 4.90625 13.5 4.375 13.5 3.75C13.5 3.125 13.2812 2.59375 12.8438 2.15625C12.4062 1.71875 11.875 1.5 11.25 1.5H8.25V0H11.25C12.2875 0 13.1719 0.365625 13.9031 1.09687C14.6344 1.82812 15 2.7125 15 3.75C15 4.7875 14.6344 5.67187 13.9031 6.40312C13.1719 7.13437 12.2875 7.5 11.25 7.5H8.25V7.5"
+            fill="white"
+          />
+        </svg>
+        Demo
+      </a>
+      <a [href]="project.urlGithub" target="_blank" class="link">
+        <svg
+          width="15"
+          height="9"
+          viewBox="0 0 15 9"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M4.5 9L0 4.5L4.5 0L5.56875 1.06875L2.11875 4.51875L5.55 7.95L4.5 9V9M10.5 9L9.43125 7.93125L12.8813 4.48125L9.45 1.05L10.5 0L15 4.5L10.5 9V9"
+            fill="white"
+          />
+        </svg>
+        Repo
+      </a>
+    </footer>
+  </div>
+</article>

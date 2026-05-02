@@ -1,7 +1,7 @@
-import { project } from '../home/components/projects/project/project.model';
+import { Project } from '../../projects/models/project.model';
 import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
-import { ProjectsService } from '../../shared/services/projects.service';
+import { ProjectsService } from '../../projects/services/projects.service';
 import { NgClass, NgFor, NgIf, Location } from '@angular/common';
 
 @Component({
@@ -12,7 +12,7 @@ import { NgClass, NgFor, NgIf, Location } from '@angular/common';
   standalone: true,
 })
 export class ProjectDetailComponent implements OnInit {
-  project!: project;
+  project!: Project;
   constructor(
     private route: ActivatedRoute,
     private projectService: ProjectsService,
