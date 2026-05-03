@@ -1,10 +1,8 @@
 import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
-import { shownStateTrigger } from '../../../../shared/animations/animations';
 
 @Component({
   selector: 'app-contact',
   imports: [],
-  animations: [shownStateTrigger],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
   standalone: true,

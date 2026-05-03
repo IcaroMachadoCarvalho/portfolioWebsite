@@ -1,117 +1,53 @@
-:host {
-  .footer {
-    background-color: #151515;
-    color: white;
+@use "../../../../_variables" as *;
+
+.footer {
+  background-color: #151515;
+  color: $text-secondary;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-self: center;
+    margin-top: 1rem;
     padding-top: 1rem;
-    padding-bottom: 1rem;
+    border-top: 1px solid $text-secondary;
+    P {
+      text-align: center;
+      font-size: var(--font-xs);
 
-    @media (min-width: 1024px) {
-      padding-top: 2rem;
-      padding-bottom: 2rem;
-    }
-
-    &__info {
-      display: flex;
-      justify-content: space-between;
-      align-items: start;
-      gap: 16px;
-
-      @media (max-width: 1024px) {
-        flex-direction: column;
-      }
-
-      img {
-        width: 45px;
-        height: 45px;
-        border-radius: 7px;
-        margin-bottom: 1rem;
-      }
-
-      .footer__logo {
-        flex-grow: 1;
-        p {
-          width: 368px;
-          font-size: var(--font-xs);
-          @media (max-width: 900px) {
-            width: 100%;
-          }
-        }
-      }
-    }
-
-    .footer__nav {
-      flex-grow: 1;
-
-      h2 {
-        font-size: var(--font-md);
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-      }
-      a {
-        color: white;
-        margin-bottom: 0.5rem;
-        width: fit-content;
-        font-size: var(--font-xs);
-        position: relative;
-        padding-bottom: 0.1rem;
-        &::after {
-          content: "";
-          background-color: white;
-          width: 0px;
-          height: 2px;
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          border-radius: 13px;
-          transition: width 0.25s linear;
-        }
-
-        &:hover::after,
-        &:focus::after {
-          width: 100%;
-        }
-      }
-
-      &--links {
-        @media (min-width: 576px) {
-          display: flex;
-          flex-direction: column;
-          justify-content: start;
-          align-items: start;
-          gap: 0.1rem;
-        }
-      }
-    }
-
-    .footer__contact {
-      flex-grow: 1;
-
-      h2 {
-        font-size: var(--font-md);
-        font-weight: bold;
-        margin-bottom: 0.5rem;
-      }
       a {
         display: inline-block;
-        transition: 0.2s ease-in;
+        color: $text-secondary;
+        transition: $transition-default;
+
         &:hover,
         &:focus {
-          transform: scale(1.1);
+          color: $text-primary;
         }
-      }
-      svg {
-        fill: white;
-        transition: 0.7s ease;
       }
     }
 
-    &__copyright {
-      margin-top: 1rem;
-      padding-top: 1rem;
-      border-top: 1px solid white;
-      P {
-        text-align: center;
-        font-size: var(--font-xs);
+    .footer__icons {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+
+      svg {
+        fill: $text-secondary;
+        transition: $transition-default;
+
+        &:hover,
+        &:focus {
+          fill: $text-primary;
+        }
+      }
+
+      a:last-child {
+        position: relative;
+        top: 2px;
       }
     }
   }
