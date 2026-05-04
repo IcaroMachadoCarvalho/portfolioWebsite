@@ -1,0 +1,27 @@
+<section>
+  <div class="contact container revealUp">
+    <div class="contact__header">
+      <h1>Entre em contato</h1>
+      <svg
+        (click)="goBack()"
+        class=""
+        tabindex="0"
+        aria-label="Voltar para home"
+        xmlns="http://www.w3.org/2000/svg"
+        height="40"
+        width="40"
+        viewBox="0 0 24 24"
+        routerLink="/"
+      >
+        <path
+          d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+        ></path>
+      </svg>
+    </div>
+    <p class="contact__text">Sinta-se a vontade para me enviar uma mensagem!</p>
+    <div class="contact__grid">
+      <app-contact-form></app-contact-form>
+      <app-contact-info></app-contact-info>
+    </div>
+  </div>
+</section>

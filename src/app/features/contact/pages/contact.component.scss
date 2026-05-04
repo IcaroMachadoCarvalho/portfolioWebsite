@@ -1,0 +1,42 @@
+@use "../../../../_variables" as *;
+.contact {
+  padding: 100px 20px 0px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  //   height: 0dvh;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1 {
+      color: $color-primary;
+    }
+    svg {
+      fill: $text-secondary;
+      cursor: pointer;
+      transition: $transition-default;
+
+      &:hover,
+      &:focus {
+        fill: $white;
+      }
+    }
+  }
+
+  &__text {
+    color: $text-secondary;
+  }
+
+  &__grid {
+    display: grid;
+    padding: 1rem 0;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+
+    @media (max-width: 968px) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

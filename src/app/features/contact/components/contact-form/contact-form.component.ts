@@ -6,17 +6,14 @@ import {
   FormGroup,
   Validators,
 } from '@angular/forms';
-import { RouterLink } from '@angular/router';
 import emailjs, { type EmailJSResponseStatus } from '@emailjs/browser';
-
 @Component({
-  selector: 'app-forms',
-  imports: [ReactiveFormsModule, RouterLink, NgClass, NgIf],
-  templateUrl: './forms.component.html',
-  styleUrls: ['./forms.component.scss'],
-  standalone: true,
+  selector: 'app-contact-form',
+  imports: [ReactiveFormsModule, NgClass, NgIf],
+  templateUrl: './contact-form.component.html',
+  styleUrl: './contact-form.component.scss',
 })
-export class FormsComponent {
+export class ContactFormComponent {
   form!: FormGroup;
 
   constructor(private formBuilder: FormBuilder) {

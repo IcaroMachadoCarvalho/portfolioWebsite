@@ -19,8 +19,8 @@ export const routes: Routes = [
   {
     path: 'contact',
     loadComponent: () =>
-      import('./features/forms/pages/forms.component').then(
-        (v) => v.FormsComponent,
+      import('./features/contact/pages/contact.component').then(
+        (v) => v.ContactComponent,
       ),
     title: 'Entre em contato',
   },
