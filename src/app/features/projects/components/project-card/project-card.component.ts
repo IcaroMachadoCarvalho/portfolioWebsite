@@ -1,6 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { Project } from '../../models/project.model';
 import { NgIf, NgFor, SlicePipe, UpperCasePipe } from '@angular/common';
+import { ProjectsService } from '../../services/projects.service';
 
 @Component({
   selector: 'project-card',
@@ -10,6 +11,7 @@ import { NgIf, NgFor, SlicePipe, UpperCasePipe } from '@angular/common';
   standalone: true,
 })
 export class ProjectCardComponent {
+  constructor(private projectService: ProjectsService) {}
   @Input() project: Project = {
     id: 0,
     status: '',
@@ -21,4 +23,8 @@ export class ProjectCardComponent {
     languages: ['', ''],
     languagesImgs: ['', ''],
   };
+
+  openModal() {
+    this.projectService.openModal(this.project);
+  }
 }

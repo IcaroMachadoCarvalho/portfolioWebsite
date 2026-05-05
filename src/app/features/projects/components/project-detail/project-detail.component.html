@@ -1,23 +1,44 @@
-<article class="project-card revealUp">
-  <div class="project-card__image-container">
+<div class="overlay" *ngIf="isOpen$ | async" (click)="closeModal()" @fade>
+  <article
+    class="project-detail"
+    *ngIf="selectedProject$ | async as project"
+    (click)="$event.stopPropagation()"
+  >
+    <svg
+      class="project-detail__close"
+      (click)="closeModal()"
+      tabindex="0"
+      aria-label="Voltar para home"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path
+        _ngcontent-ng-c2653872471=""
+        d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"
+      ></path>
+    </svg>
+
     <img
+      class="project-detail__image"
       [src]="project.imgProject"
       [alt]="'Capa do projeto ' + project.name"
-      (click)="openModal()"
     />
-  </div>
 
-  <div class="project-card__content">
-    <h2 class="project-card__title">{{ project.name }}</h2>
-    <p class="project-card__description">{{ project.shortDescription }}</p>
+    <h2 class="project-detail__title">
+      {{ project.name }}
+    </h2>
 
-    <div class="project-card__tags">
+    <p class="project-detail__description">
+      {{ project.longDescription }}
+    </p>
+
+    <div class="project-detail__tags">
       <span class="tag" *ngFor="let item of project.languages | slice: 0 : 3">
         {{ item | uppercase }}
       </span>
     </div>
 
-    <footer class="project-card__actions">
+    <div class="project-detail__actions">
       <a
         *ngIf="project.urlDeploy"
         [href]="project.urlDeploy"
@@ -38,6 +59,7 @@
         </svg>
         Demo
       </a>
+
       <a
         *ngIf="project.urlGithub"
         [href]="project.urlGithub"
@@ -58,6 +80,6 @@
         </svg>
         Repo
       </a>
-    </footer>
-  </div>
-</article>
+    </div>
+  </article>
+</div>
