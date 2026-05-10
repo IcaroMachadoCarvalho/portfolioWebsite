@@ -1,9 +1,10 @@
 import { Component, HostListener, OnInit } from '@angular/core';
 import { NgClass, NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-header',
-  imports: [NgClass, NgIf],
+  imports: [NgClass, NgIf, RouterLink],
   templateUrl: './header.component.html',
   styleUrl: './header.component.scss',
   standalone: true,

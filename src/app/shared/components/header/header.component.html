@@ -7,9 +7,9 @@
   >
     <div class="header__tab">
       <!-- Logo -->
-      <a href="/" aria-label="Ir para home">
+      <a routerLink="/" aria-label="Ir para home">
         <img
-          src="../../../assets/images/imgLogo.png"
+          src="../../../assets/images/imgLogo.webp"
           alt="Imagem logo portfoflio"
         />
       </a>
@@ -93,7 +93,10 @@
           >
         </li>
         <li>
-          <a href="/contact" (click)="closeNav()" aria-label="Ir para Projetos"
+          <a
+            routerLink="/contact"
+            (click)="closeNav()"
+            aria-label="Ir para Projetos"
             >Contato</a
           >
         </li>
@@ -102,7 +105,7 @@
 
     <a
       class="header__contact"
-      href="/contact"
+      routerLink="/contact"
       (click)="closeNav()"
       aria-label="Ir para Contato"
       >Contato</a

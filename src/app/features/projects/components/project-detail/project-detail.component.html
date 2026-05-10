@@ -33,7 +33,7 @@
     </p>
 
     <div class="project-detail__tags">
-      <span class="tag" *ngFor="let item of project.languages | slice: 0 : 3">
+      <span class="tag" *ngFor="let item of project.languages">
         {{ item | uppercase }}
       </span>
     </div>

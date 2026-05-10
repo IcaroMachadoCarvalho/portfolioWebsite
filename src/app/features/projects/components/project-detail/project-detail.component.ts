@@ -1,19 +1,13 @@
 import { Component } from '@angular/core';
 import { ProjectsService } from '../../services/projects.service';
 import { Observable } from 'rxjs';
-import {
-  AsyncPipe,
-  NgFor,
-  NgIf,
-  SlicePipe,
-  UpperCasePipe,
-} from '@angular/common';
+import { AsyncPipe, NgFor, NgIf, UpperCasePipe } from '@angular/common';
 import { Project } from '../../models/project.model';
 import { animate, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-project-detail',
-  imports: [NgIf, NgFor, UpperCasePipe, SlicePipe, AsyncPipe],
+  imports: [NgIf, NgFor, UpperCasePipe, AsyncPipe],
   animations: [
     trigger('fade', [
       transition(':enter', [
