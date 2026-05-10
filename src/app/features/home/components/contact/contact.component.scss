@@ -1,16 +1,16 @@
 @use "../../../../../variables" as *;
 
 .contact {
-  padding: 80px 20px;
+  padding: 80px 2rem;
   color: $white;
 
   &__wrapper {
     max-width: 1040px;
     margin: 0 auto;
     background-color: #2d2e30;
-    border: 1px solid rgba($white, 0.05); // Borda sutil para definir melhor o card
+    border: 1px solid rgba($white, 0.05);
     border-radius: 1rem;
-    padding: 3rem 2rem; // Aumentei o padding vertical para dar mais "ar"
+    padding: 3rem 2rem;
     display: flex;
     flex-direction: column;
     justify-content: center;

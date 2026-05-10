@@ -84,10 +84,11 @@ body {
 /* Container */
 .container {
   width: 100%;
-  padding: 0 1rem;
+  padding: 0 2rem;
   margin: 0 auto;
   max-width: 100%;
 
+  // avaliar isso debaixo e ajustar padding de section acho que tirar das laterais
   @media (min-width: $breakpoint-sm) {
     max-width: $breakpoint-sm;
   }
