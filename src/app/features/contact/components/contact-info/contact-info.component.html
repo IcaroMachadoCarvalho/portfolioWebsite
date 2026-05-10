@@ -3,7 +3,12 @@
 
   <div class="contact__info__group">
     <!-- Item de E-mail -->
-    <article class="contact__card">
+    <a
+      [href]="'mailto:' + email"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="contact__card"
+    >
       <div class="contact__card__icon">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -19,16 +24,17 @@
       </div>
       <div class="contact__card__content">
         <span class="contact__card__label">EMAIL</span>
-        <a
-          href="mailto:contact@icaro.dev"
-          class="contact__card__value"
-          [innerHTML]="email"
-        >
-        </a>
-      </div>
-    </article>
 
-    <article class="contact__card">
+        <span class="contact__card__value"> {{ email }}</span>
+      </div>
+    </a>
+
+    <a
+      href="https://www.linkedin.com/in/icaromachadodecarvalho/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="contact__card"
+    >
       <div class="contact__card__icon">
         <svg
           width="26"
@@ -43,14 +49,10 @@
         </svg>
       </div>
       <div class="contact__card__content">
-        <span class="contact__card__label">Linkedin</span>
-        <a
-          href="https://www.linkedin.com/in/ícaromachadodecarvalho/"
-          class="contact__card__value"
-        >
-          in/ícaromachadodecarvalho
-        </a>
+        <span class="contact__card__label">LinkedIn</span>
+
+        <span class="contact__card__value"> in/icaromachadodecarvalho </span>
       </div>
-    </article>
+    </a>
   </div>
 </aside>
