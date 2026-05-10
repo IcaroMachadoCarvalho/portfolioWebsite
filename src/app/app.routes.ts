@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { HomeComponent } from './features/home/home.component';
+import { HomeComponent } from './features/home/pages/home.component';
 
 export const routes: Routes = [
   {
@@ -8,24 +8,26 @@ export const routes: Routes = [
     title: 'Ícaro Machado de Carvalho',
   },
   {
-    path: 'projects/:id',
+    path: 'projects',
     // Lazy loading componente standalone
     loadComponent: () =>
-      import('./features/project-detail/project-detail.component').then(
-        (v) => v.ProjectDetailComponent,
+      import('./features/projects/pages/project-page/project-page.component').then(
+        (v) => v.ProjectPageComponent,
       ),
     title: 'Mais de detalhes do projeto',
   },
   {
     path: 'contact',
     loadComponent: () =>
-      import('./features/forms/forms.component').then((v) => v.FormsComponent),
+      import('./features/contact/pages/contact.component').then(
+        (v) => v.ContactComponent,
+      ),
     title: 'Entre em contato',
   },
   {
     path: '**',
     loadComponent: () =>
-      import('./features/not-found/not-found.component').then(
+      import('./features/not-found/pages/not-found.component').then(
         (v) => v.NotFoundComponent,
       ),
     title: 'Não encontrado a página volte para home',

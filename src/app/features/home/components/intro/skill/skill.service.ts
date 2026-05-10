@@ -7,36 +7,22 @@ import { skill } from './skill.model';
 export class SkillService {
   skills: skill[] = [
     {
-      imgLink: '../../assets/images/angular-original.svg',
-      techName: 'Angular',
+      techName: 'ANGULAR',
     },
     {
-      imgLink: '../../assets/images/typescript-plain.svg',
-      techName: 'Typescript',
+      techName: 'JAVA',
     },
     {
-      imgLink: '../../assets/images/tailwindcss-original.svg',
-      techName: 'Tailwind',
+      techName: 'SPRING BOOT',
     },
     {
-      imgLink: '../../assets/images/sass-original.svg',
-      techName: 'Sass',
+      techName: 'NODE.JS',
     },
     {
-      imgLink: '../../assets/images/javascript-original.svg',
-      techName: 'Javascript',
+      techName: 'TYPESCRIPT',
     },
     {
-      imgLink: '../../assets/images/html5-original.svg',
-      techName: 'HTML',
-    },
-    {
-      imgLink: '../../assets/images/css3-plain.svg',
-      techName: 'CSS',
-    },
-    {
-      imgLink: '../../assets/images/react-original.svg',
-      techName: 'React',
+      techName: 'DOCKER',
     },
   ];
 

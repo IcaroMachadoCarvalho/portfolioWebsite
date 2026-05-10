@@ -1,0 +1,17 @@
+<section class="featured_projects">
+  <div
+    class="featured_projects__wrapper container"
+    #featuredProjectsElement
+    [class.revealUp]="isVisible"
+  >
+    <div class="featured_projects__header">
+      <h1 class="featured_projects__title">projetos</h1>
+      <a href="/projects">Ver mais projetos</a>
+    </div>
+    <div class="featured_projects__grid">
+      <div *ngFor="let project of projects">
+        <project-card [project]="project"></project-card>
+      </div>
+    </div>
+  </div>
+</section>

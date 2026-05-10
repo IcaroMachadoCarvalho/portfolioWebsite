@@ -1,0 +1,43 @@
+/* Tipografia (equivalente ao :root do CSS) */
+$font-xs: 0.75em; /* Fonte extra pequena */
+$font-sm: 0.875em; /* Fonte pequena */
+$font-md: 1.124em; /* Fonte média */
+$font-lg: 1.5em; /* Fonte grande */
+$font-xl: 2em; /* Fonte extra grande */
+$font-xxl: 2.5em; /* Fonte super grande */
+$font-x-md: 1.667em; /* Fonte extra média */
+$font-x-lg: 3.075em; /* Fonte extra extra grande */
+
+/* Breakpoints (opcional, mas recomendado para seu caso) */
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-xxl: 1536px;
+
+/* Fontes */
+$font-inter: "Inter", sans-serif;
+$font-bebas: "Bebas Neue", sans-serif;
+
+/* Transições / animações */
+$transition-default: all 0.3s ease;
+
+/* Cores*/
+// Base
+$white: #ffffff;
+$black: #000000;
+
+// Brand
+$color-primary: #3178c6;
+
+// Backgrounds
+$bg-dark: #131313;
+
+// Textos
+$text-primary: $white;
+$text-secondary: rgba($white, 0.6);
+$text-muted: #a1a1aa;
+// $text-muted: rgba($white, 0.4);
+
+// Borders
+$border-light: rgba($white, 0.6);

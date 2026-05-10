@@ -4,10 +4,16 @@ import { RouterOutlet } from '@angular/router';
 import { Title, Meta } from '@angular/platform-browser';
 import { HeaderComponent } from './shared/components/header/header.component';
 import { FooterComponent } from './shared/components/footer/footer.component';
+import { ProjectDetailComponent } from './features/projects/components/project-detail/project-detail.component';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HeaderComponent, FooterComponent],
+  imports: [
+    RouterOutlet,
+    HeaderComponent,
+    FooterComponent,
+    ProjectDetailComponent,
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
   standalone: true,

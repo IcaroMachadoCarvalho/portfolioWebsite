@@ -1,0 +1,55 @@
+@use "../../../../../../_variables" as *;
+// Estilos do Arsenal
+.about__tools {
+  background: #141414;
+  border: 1px solid #262626;
+  padding: 40px;
+  border-radius: 8px;
+  height: fit-content; // Mantém o card compacto
+
+  .skill-group {
+    margin-bottom: 30px;
+
+    h4 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 1rem;
+      margin-bottom: 15px;
+      color: #e4e4e7;
+
+      path {
+        fill: $color-primary;
+      }
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+
+      span {
+        background: #262626;
+        padding: 6px 12px;
+        border-radius: 4px;
+        font-size: 0.8rem;
+        color: #a1a1aa;
+        transition: $transition-default;
+
+        &:hover {
+          color: $white;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+.about__label {
+  display: block;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: $color-primary;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}

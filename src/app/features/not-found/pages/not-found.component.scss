@@ -1,0 +1,59 @@
+@use "../../../../variables" as *;
+
+.notFound {
+  min-height: 90dvh;
+  padding: 80px 20px;
+  color: $white;
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+
+  margin: 0 auto;
+
+  &__title {
+    font-size: clamp(3.5rem, 10vw, 6.5rem);
+    line-height: 1;
+  }
+
+  &__text {
+    font-size: clamp(0.9rem, 2.5vw, $font-md);
+    color: $text-secondary;
+    max-width: 400px;
+  }
+
+  &__button {
+    background-color: transparent;
+    font-size: clamp(0.85rem, 2.5vw, 1rem);
+
+    color: $text-secondary;
+    border: 1px solid $text-secondary;
+    border-radius: 50px;
+
+    padding: 0.6rem 1.2rem;
+    margin-top: 0.8rem;
+
+    transition: $transition-default;
+
+    &:hover,
+    &:focus {
+      color: $white;
+      background-color: $color-primary;
+      border-color: $color-primary;
+    }
+  }
+}
+
+/* EXTRA: ajustes finos para telas muito pequenas */
+@media (max-width: 400px) {
+  .notFound {
+    padding: 60px 16px;
+
+    &__title {
+      font-size: 3rem;
+    }
+  }
+}

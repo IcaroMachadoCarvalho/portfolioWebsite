@@ -1,36 +1,21 @@
-import { Component, HostListener, ChangeDetectorRef } from '@angular/core';
-import { shownStateTrigger } from '../../../../shared/animations/animations';
+import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
-  imports: [],
-  animations: [shownStateTrigger],
+  imports: [RouterLink],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.scss',
   standalone: true,
 })
 export class ContactComponent {
   email: string = 'icarocarvalho028@gmail.com';
-  isVisible!: boolean;
-  contactElement!: Element | null;
+  isVisible: boolean = false;
+  offset: number = 100;
 
-  constructor(private cdr: ChangeDetectorRef) {}
+  @ViewChild('ctoElement') elemento!: ElementRef;
 
-  // copyEmail() {
-  //   // Usando a API Clipboard moderna
-  //   navigator.clipboard.writeText(this.email).then(() => {
-  //     alert('E-mail copiado'); // Exibe o alerta após o e-mail ser copiado
-  //   }).catch((err) => {
-  //     console.error('Erro ao copiar o e-mail: ', err);
-  //     alert('Falha ao copiar o e-mail');
-  //   });
-  // }
-  ngAfterViewInit(): void {
-    this.contactElement = document.querySelector('#contact');
-    if (this.contactElement) {
-      this.detectScroll();
-    }
-  }
+  constructor() {}
 
   @HostListener('window:scroll')
   onWindowScroll(): void {
@@ -38,14 +23,13 @@ export class ContactComponent {
   }
 
   detectScroll(): void {
-    if (this.contactElement) {
-      const rect = this.contactElement.getBoundingClientRect();
+    if (this.isVisible) return;
 
-      // Verifica se o elemento está visível
-      this.isVisible = rect.top <= window.innerHeight && rect.bottom >= 0;
+    const rect = this.elemento.nativeElement.getBoundingClientRect();
+    const windowHeight = window.innerHeight;
 
-      // Força a detecção de mudanças para evitar o erro por não ser feito pelo angular
-      this.cdr.detectChanges();
+    if (rect.top <= windowHeight - this.offset) {
+      this.isVisible = true;
     }
   }
 }

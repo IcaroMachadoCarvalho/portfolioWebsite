@@ -10,7 +10,6 @@ import { skill } from './skill.model';
 })
 export class SkillComponent {
   @Input() info: skill = {
-    imgLink: '',
     techName: '',
   };
 }
